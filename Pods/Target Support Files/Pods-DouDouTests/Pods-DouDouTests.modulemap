@@ -1,0 +1,6 @@
+framework module Pods_DouDouTests {
+  umbrella header "Pods-DouDouTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

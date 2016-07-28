@@ -12,6 +12,10 @@
 		5F05AE8E1D48F70E00FF8495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F05AE8D1D48F70E00FF8495 /* Assets.xcassets */; };
 		5F05AE911D48F70E00FF8495 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F05AE8F1D48F70E00FF8495 /* LaunchScreen.storyboard */; };
 		5F05AE9C1D48F70E00FF8495 /* DouDouTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05AE9B1D48F70E00FF8495 /* DouDouTests.m */; };
+		5F05AECB1D49A04B00FF8495 /* UIImage+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05AECA1D49A04B00FF8495 /* UIImage+CY.m */; };
+		5F05AECE1D49A30300FF8495 /* UIView+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05AECD1D49A30200FF8495 /* UIView+CY.m */; };
+		81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */; };
+		F69A7A736F444C16E65185F4 /* Pods_DouDou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7297474A5DBB664413A96E8B /* Pods_DouDou.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		128FAD7F90B9F5781C2213A0 /* Pods-DouDou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDou.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouDou/Pods-DouDou.release.xcconfig"; sourceTree = "<group>"; };
+		4433E338FAAE3AD141C7C0F9 /* Pods-DouDou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouDou/Pods-DouDou.debug.xcconfig"; sourceTree = "<group>"; };
 		5F05AE841D48F70D00FF8495 /* DouDou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouDou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F05AE881D48F70D00FF8495 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F05AE8A1D48F70E00FF8495 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,6 +41,14 @@
 		5F05AE971D48F70E00FF8495 /* DouDouTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouDouTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F05AE9B1D48F70E00FF8495 /* DouDouTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouDouTests.m; sourceTree = "<group>"; };
 		5F05AE9D1D48F70E00FF8495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F05AEC91D49A04B00FF8495 /* UIImage+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CY.h"; sourceTree = "<group>"; };
+		5F05AECA1D49A04B00FF8495 /* UIImage+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CY.m"; sourceTree = "<group>"; };
+		5F05AECC1D49A30200FF8495 /* UIView+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CY.h"; sourceTree = "<group>"; };
+		5F05AECD1D49A30200FF8495 /* UIView+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CY.m"; sourceTree = "<group>"; };
+		7297474A5DBB664413A96E8B /* Pods_DouDou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7531A7B4D137B48EF58A06AE /* Pods-DouDouTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDouTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests.release.xcconfig"; sourceTree = "<group>"; };
+		D71405357221AAAE0B3AE205 /* Pods-DouDouTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDouTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F69A7A736F444C16E65185F4 /* Pods_DouDou.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,18 +64,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D9DC9C31E47CACA76ED5CB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4433E338FAAE3AD141C7C0F9 /* Pods-DouDou.debug.xcconfig */,
+				128FAD7F90B9F5781C2213A0 /* Pods-DouDou.release.xcconfig */,
+				D71405357221AAAE0B3AE205 /* Pods-DouDouTests.debug.xcconfig */,
+				7531A7B4D137B48EF58A06AE /* Pods-DouDouTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5F05AE7B1D48F70D00FF8495 = {
 			isa = PBXGroup;
 			children = (
 				5F05AE861D48F70D00FF8495 /* DouDou */,
 				5F05AE9A1D48F70E00FF8495 /* DouDouTests */,
 				5F05AE851D48F70D00FF8495 /* Products */,
+				4D9DC9C31E47CACA76ED5CB8 /* Pods */,
+				C0447FF8AD3DFCDFF1DF2FB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +107,8 @@
 			children = (
 				5F05AE8A1D48F70E00FF8495 /* AppDelegate.h */,
 				5F05AE8B1D48F70E00FF8495 /* AppDelegate.m */,
+				5F05AEC31D499FD700FF8495 /* Common */,
+				5F05AEAD1D499FB700FF8495 /* Src */,
 				5F05AE8D1D48F70E00FF8495 /* Assets.xcassets */,
 				5F05AE8F1D48F70E00FF8495 /* LaunchScreen.storyboard */,
 				5F05AE921D48F70E00FF8495 /* Info.plist */,
@@ -103,6 +134,241 @@
 			path = DouDouTests;
 			sourceTree = "<group>";
 		};
+		5F05AEAD1D499FB700FF8495 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEAE1D499FB700FF8495 /* Contacts */,
+				5F05AEB71D499FB700FF8495 /* Dial */,
+				5F05AEBD1D499FB700FF8495 /* More */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		5F05AEAE1D499FB700FF8495 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEAF1D499FB700FF8495 /* AddContact */,
+				5F05AEB21D499FB700FF8495 /* ContactBook */,
+				5F05AEB51D499FB700FF8495 /* Model */,
+				5F05AEB61D499FB700FF8495 /* View */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		5F05AEAF1D499FB700FF8495 /* AddContact */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEB01D499FB700FF8495 /* Model */,
+				5F05AEB11D499FB700FF8495 /* View */,
+			);
+			path = AddContact;
+			sourceTree = "<group>";
+		};
+		5F05AEB01D499FB700FF8495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F05AEB11D499FB700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F05AEB21D499FB700FF8495 /* ContactBook */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEB31D499FB700FF8495 /* Model */,
+				5F05AEB41D499FB700FF8495 /* View */,
+			);
+			path = ContactBook;
+			sourceTree = "<group>";
+		};
+		5F05AEB31D499FB700FF8495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F05AEB41D499FB700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F05AEB51D499FB700FF8495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F05AEB61D499FB700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F05AEB71D499FB700FF8495 /* Dial */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEB81D499FB700FF8495 /* Detail */,
+				5F05AEBB1D499FB700FF8495 /* Model */,
+				5F05AEBC1D499FB700FF8495 /* View */,
+			);
+			path = Dial;
+			sourceTree = "<group>";
+		};
+		5F05AEB81D499FB700FF8495 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEB91D499FB700FF8495 /* Model */,
+				5F05AEBA1D499FB700FF8495 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5F05AEB91D499FB700FF8495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F05AEBA1D499FB700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F05AEBB1D499FB700FF8495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F05AEBC1D499FB700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F05AEBD1D499FB700FF8495 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEBE1D499FB700FF8495 /* Model */,
+				5F05AEBF1D499FB700FF8495 /* Share */,
+				5F05AEC21D499FB700FF8495 /* View */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		5F05AEBE1D499FB700FF8495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F05AEBF1D499FB700FF8495 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEC01D499FB700FF8495 /* Model */,
+				5F05AEC11D499FB700FF8495 /* View */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		5F05AEC01D499FB700FF8495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F05AEC11D499FB700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F05AEC21D499FB700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F05AEC31D499FD700FF8495 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AEC51D499FD700FF8495 /* Category */,
+				5F05AEC41D499FD700FF8495 /* ApiManager */,
+				5F05AEC61D499FD700FF8495 /* DBHelper */,
+				5F05AEC81D499FD700FF8495 /* View */,
+				5F05AEC71D499FD700FF8495 /* Lib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5F05AEC41D499FD700FF8495 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		5F05AEC51D499FD700FF8495 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5F05AECC1D49A30200FF8495 /* UIView+CY.h */,
+				5F05AECD1D49A30200FF8495 /* UIView+CY.m */,
+				5F05AEC91D49A04B00FF8495 /* UIImage+CY.h */,
+				5F05AECA1D49A04B00FF8495 /* UIImage+CY.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5F05AEC61D499FD700FF8495 /* DBHelper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DBHelper;
+			sourceTree = "<group>";
+		};
+		5F05AEC71D499FD700FF8495 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		5F05AEC81D499FD700FF8495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0447FF8AD3DFCDFF1DF2FB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7297474A5DBB664413A96E8B /* Pods_DouDou.framework */,
+				73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +376,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F05AEA01D48F70E00FF8495 /* Build configuration list for PBXNativeTarget "DouDou" */;
 			buildPhases = (
+				BFBC6D18EB841427EE6F9C33 /* [CP] Check Pods Manifest.lock */,
 				5F05AE801D48F70D00FF8495 /* Sources */,
 				5F05AE811D48F70D00FF8495 /* Frameworks */,
 				5F05AE821D48F70D00FF8495 /* Resources */,
+				02C165C106A152ABFE9B095B /* [CP] Embed Pods Frameworks */,
+				2BB2CDF75E6011EDA34A3A6A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,9 +396,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F05AEA31D48F70E00FF8495 /* Build configuration list for PBXNativeTarget "DouDouTests" */;
 			buildPhases = (
+				36680E02B414DE2381022E69 /* [CP] Check Pods Manifest.lock */,
 				5F05AE931D48F70E00FF8495 /* Sources */,
 				5F05AE941D48F70E00FF8495 /* Frameworks */,
 				5F05AE951D48F70E00FF8495 /* Resources */,
+				93BB90989F9A1DB557947660 /* [CP] Embed Pods Frameworks */,
+				94E285162A90DEDED868A7D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,12 +469,107 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02C165C106A152ABFE9B095B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DouDou/Pods-DouDou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BB2CDF75E6011EDA34A3A6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DouDou/Pods-DouDou-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36680E02B414DE2381022E69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		93BB90989F9A1DB557947660 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94E285162A90DEDED868A7D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFBC6D18EB841427EE6F9C33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5F05AE801D48F70D00FF8495 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F05AECB1D49A04B00FF8495 /* UIImage+CY.m in Sources */,
 				5F05AE8C1D48F70E00FF8495 /* AppDelegate.m in Sources */,
+				5F05AECE1D49A30300FF8495 /* UIView+CY.m in Sources */,
 				5F05AE891D48F70D00FF8495 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +688,7 @@
 		};
 		5F05AEA11D48F70E00FF8495 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4433E338FAAE3AD141C7C0F9 /* Pods-DouDou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DouDou/Info.plist;
@@ -332,6 +700,7 @@
 		};
 		5F05AEA21D48F70E00FF8495 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 128FAD7F90B9F5781C2213A0 /* Pods-DouDou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DouDou/Info.plist;
@@ -343,6 +712,7 @@
 		};
 		5F05AEA41D48F70E00FF8495 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D71405357221AAAE0B3AE205 /* Pods-DouDouTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DouDouTests/Info.plist;
@@ -355,6 +725,7 @@
 		};
 		5F05AEA51D48F70E00FF8495 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7531A7B4D137B48EF58A06AE /* Pods-DouDouTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DouDouTests/Info.plist;
@@ -384,6 +755,7 @@
 				5F05AEA21D48F70E00FF8495 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F05AEA31D48F70E00FF8495 /* Build configuration list for PBXNativeTarget "DouDouTests" */ = {
 			isa = XCConfigurationList;
@@ -392,6 +764,7 @@
 				5F05AEA51D48F70E00FF8495 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
