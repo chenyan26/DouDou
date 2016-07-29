@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "DDLoginRootViewController.h"
+#import "DDLoginViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,7 +20,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+//    DDLoginViewController * loginVC = [[DDLoginViewController alloc] init];
+    DDLoginViewController * loginVC = [[DDLoginViewController alloc] init];
+    
+    DDLoginRootViewController *loginRootVC = [[DDLoginRootViewController alloc] initWithRootViewController:loginVC];
+    
+    [self.window setRootViewController:loginRootVC];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
