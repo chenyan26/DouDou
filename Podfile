@@ -10,6 +10,7 @@ target 'DouDou' do
   pod 'Masonry'
   pod 'MJExtension'
   pod 'FMDB'
+  pod 'MBProgressHUD'
 
   target 'DouDouTests' do
     inherit! :search_paths

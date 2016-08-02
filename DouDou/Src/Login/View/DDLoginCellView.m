@@ -23,22 +23,17 @@
 {
     self = [super init];
     if (self) {
-        _imageView = [[UIImageView alloc] init];
-        _textField = [[UITextField alloc] init];
+        [self addSubview:self.textField];
+        [self addSubview:self.imageView];
     }
     return self;
 }
 
-- (void)setWithImageName:(NSString *)name andText:(NSString *)text
+- (void)layoutSubviews
 {
-    
     [self setBackgroundColor:[UIColor whiteColor]];
     
-    [_imageView setImage:[UIImage imageNamed:name]];
     [_imageView setContentMode:UIViewContentModeCenter];
-    
-    [self addSubview:_imageView];
-    
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.mas_equalTo(0);
@@ -46,9 +41,7 @@
         make.width.equalTo(self.mas_height);
     }];
     
-    [self addSubview:_textField];
     
-    [_textField setPlaceholder:text];
     [_textField setClearButtonMode:UITextFieldViewModeAlways];
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);
@@ -56,6 +49,31 @@
         make.right.equalTo(self.mas_right).with.offset(-20.0f);
         make.height.equalTo(self);
     }];
+
+}
+
+- (void)setWithImageName:(NSString *)name andText:(NSString *)text
+{
+    [_imageView setImage:[UIImage imageNamed:name]];
+    [_textField setPlaceholder:text];
+}
+
+#pragma mark - getters and setters
+
+- (UITextField *)textField
+{
+    if (_textField == nil) {
+        _textField = [[UITextField alloc] init];
+    }
+    return _textField;
+}
+
+- (UIImageView *)imageView
+{
+    if (_imageView == nil) {
+        _imageView = [[UIImageView alloc] init];
+    }
+    return _imageView;
 }
 
 @end

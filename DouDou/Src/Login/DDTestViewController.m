@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *testField;
 @end
 
-@implementation DDRegisterViewController
+@implementation DDTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

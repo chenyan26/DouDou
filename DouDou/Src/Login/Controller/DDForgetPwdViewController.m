@@ -33,8 +33,37 @@
     
     [self setTitle:@"忘记密码"];
     
-    [self setupSubviews];
+    UIScrollView * sc = [[UIScrollView alloc] init];
+    _scrollView = sc;
+    _scrollView.delegate = self;
     
+    DDLoginCellView *v1= [[DDLoginCellView alloc] init];
+    _phoneView = v1;
+    
+    DDLoginCellView *v2= [[DDLoginCellView alloc] init];
+    _verifyView = v2;
+    
+    UIButton *btn = [[UIButton alloc] init];
+    _verifyBtn = btn;
+    
+    DDLoginCellView *v3= [[DDLoginCellView alloc] init];
+    _pwdView = v3;
+    
+    DDLoginCellView *v4= [[DDLoginCellView alloc] init];
+    _rePwdView = v4;
+    
+    UIButton *button = [[UIButton alloc] init];
+    _commitBtn = button;
+    
+    [self.view addSubview:_scrollView];
+    [_scrollView addSubview:_phoneView];
+    [_scrollView addSubview:_verifyView];
+    [_verifyView addSubview:_verifyBtn];
+    [_scrollView addSubview:_pwdView];
+    [_scrollView addSubview:_rePwdView];
+    [_scrollView addSubview:_commitBtn];
+    
+    [self setupSubviews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,45 +82,26 @@
 #pragma mark - private methods
 
 - (void) setupSubviews {
-    UIScrollView * sc = [[UIScrollView alloc] init];
-    _scrollView = sc;
-    _scrollView.delegate = self;
+    
     _scrollView.frame = self.view.bounds;
-    
     _scrollView.contentSize = CGSizeMake(_scrollView.width, 700);
-    
     _scrollView.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
     [_scrollView setShowsVerticalScrollIndicator:NO];
-    
     //滚动时，收键盘
     [_scrollView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
-    
-    [self.view addSubview:_scrollView];
 
     //手机号
-     DDLoginCellView *v1= [[DDLoginCellView alloc] init];
-    _phoneView = v1;
-    
-    [_scrollView addSubview:_phoneView];
-    
     [_phoneView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.mas_equalTo(MARGIN_CELL);
         make.height.mas_equalTo(HEIGHT_LOGINCELL);
         make.width.equalTo(self.view);
     }];
-    
     [_phoneView.textField setKeyboardType:UIKeyboardTypeNumberPad];
-    
     [_phoneView setWithImageName:@"tabbar_discover" andText:@"请输入手机号码"];
     
     //验证码
-    DDLoginCellView *v2= [[DDLoginCellView alloc] init];
-    _verifyView = v2;
-    
-    [_scrollView addSubview:_verifyView];
-    
     [_verifyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.equalTo(_phoneView.mas_bottom).with.offset(1.0f);
@@ -102,14 +112,11 @@
     [_verifyView setWithImageName:@"tabbar_discover" andText:@"请输入验证码"];
     
     //获取验证码
-    UIButton *btn = [[UIButton alloc] init];
-    _verifyBtn = btn;
     [_verifyBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     [_verifyBtn setBackgroundColor:DEFAULT_NAVBAR_COLOR];
     
     [_verifyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    [_verifyView addSubview:_verifyBtn];
+    [_verifyBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     
     [_verifyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_verifyView.textField);
@@ -119,26 +126,15 @@
     }];
     
     //密码
-    DDLoginCellView *v3= [[DDLoginCellView alloc] init];
-    _pwdView = v3;
-    
-    [_scrollView addSubview:_pwdView];
-    
     [_pwdView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.equalTo(_verifyView.mas_bottom).with.offset(MARGIN_CELL);
         make.height.mas_equalTo(HEIGHT_LOGINCELL);
         make.width.equalTo(self.view);
     }];
-    
     [_pwdView setWithImageName:@"tabbar_discover" andText:@"请输入密码"];
     
     //再次输入密码
-    DDLoginCellView *v4= [[DDLoginCellView alloc] init];
-    _rePwdView = v4;
-    
-    [_scrollView addSubview:_rePwdView];
-    
     [_rePwdView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.equalTo(_pwdView.mas_bottom).with.offset(1.0f);
@@ -160,18 +156,16 @@
     }];
     
     //提交
-    UIButton *button = [[UIButton alloc] init];
-    _commitBtn = button;
     [_commitBtn setTitle:@"提交" forState:UIControlStateNormal];
     [_commitBtn setBackgroundColor:DEFAULT_NAVBAR_COLOR];
     [_commitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    [_scrollView addSubview:_commitBtn];
+    [_commitBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     
     [_commitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_rePwdView.mas_bottom).with.offset(100);
         make.width.mas_equalTo(self.view.width - 100);
         make.centerX.equalTo(self.view);
+        make.height.mas_equalTo(BUTTON_HEIGHT);
     }];
 }
 

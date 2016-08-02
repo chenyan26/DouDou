@@ -1,25 +1,24 @@
 //
-//  DDLoginRootViewController.m
+//  DDShareViewController.m
 //  DouDou
 //
-//  Created by echo on 7/28/16.
+//  Created by echo on 8/1/16.
 //  Copyright © 2016 caratel. All rights reserved.
 //
 
-#import "DDLoginRootViewController.h"
+#import "DDShareViewController.h"
 
-@interface DDLoginRootViewController ()
+@interface DDShareViewController ()
 
 @end
 
-@implementation DDLoginRootViewController
+@implementation DDShareViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationBar setBarTintColor:DEFAULT_NAVBAR_COLOR];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationItem setTitle:@"分享给朋友" ];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +26,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (instancetype)init
+{
+    if (self = [super init]) {
+        [self setHidesBottomBarWhenPushed:YES];
+    }
+    return self;
+}
 /*
 #pragma mark - Navigation
 

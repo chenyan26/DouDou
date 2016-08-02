@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 
-#import "DDLoginRootViewController.h"
+#import "DDNavigationViewController.h"
 #import "DDLoginViewController.h"
+
+#import "DDRootViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,12 +23,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-//    DDLoginViewController * loginVC = [[DDLoginViewController alloc] init];
-    DDLoginViewController * loginVC = [[DDLoginViewController alloc] init];
     
-    DDLoginRootViewController *loginRootVC = [[DDLoginRootViewController alloc] initWithRootViewController:loginVC];
+//    DDLoginViewController *loginVC = [[DDLoginViewController alloc] init];
+//    DDNavigationViewController *loginRootVC = [[DDNavigationViewController alloc] initWithRootViewController:loginVC];
+//    [self.window setRootViewController:loginRootVC];
     
-    [self.window setRootViewController:loginRootVC];
+    
+    DDRootViewController *rootVC = [[DDRootViewController alloc] init];
+    [self.window setRootViewController:rootVC];
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
