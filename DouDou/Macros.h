@@ -15,12 +15,27 @@
 #define WIDTH_SCREEN        [UIScreen mainScreen].bounds.size.width
 #define HEIGHT_SCREEN       [UIScreen mainScreen].bounds.size.height
 
+//login、add、edit中的高度
 #define HEIGHT_LOGINCELL	50
-#define MARGIN_CELL         20.0f
+
+#define MARGIN_CELL         20
+
+//左边的间距
+#define MARGIN_LEFT         10
+
 #define BUTTON_HEIGHT       45
 
+#define WIDTH_LABEL       50
+
+//table中的cell
 #define HEIGHT_DEFAULT_CELL	60
+
+//含有头像的大cell：more、add、edit中第一个
 #define HEIGHT_IMAGE_CELL	80
+
+//拨号记录，左边的图标的 width
+#define WIDTH_LEFT_ICON	    35
+
 
 //#define HEIGHT_STATUSBAR	20
 //#define HEIGHT_TABBAR       49

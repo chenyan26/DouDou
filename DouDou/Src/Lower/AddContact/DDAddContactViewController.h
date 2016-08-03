@@ -1,5 +1,5 @@
 //
-//  DDDialViewController.h
+//  DDAddContactViewController.h
 //  DouDou
 //
 //  Created by echo on 8/2/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DDDialViewController : UIViewController
+@interface DDAddContactViewController : UIViewController
 
 @end

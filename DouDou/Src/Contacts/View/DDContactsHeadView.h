@@ -1,5 +1,5 @@
 //
-//  DDDialViewController.h
+//  DDContactsHeadView.h
 //  DouDou
 //
 //  Created by echo on 8/2/16.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DDDialViewController : UIViewController
+@interface DDContactsHeadView : UITableViewHeaderFooterView
+
+@property (nonatomic, copy) NSString *title;
 
 @end

@@ -9,6 +9,13 @@
 #import "DDMoreImageCell.h"
 #import <Masonry/Masonry.h>
 
+@interface DDMoreImageCell ()
+
+@property (nonatomic, strong) UIImageView *leftImageView;
+@property (nonatomic, strong) UILabel *label;
+
+@end
+
 @implementation DDMoreImageCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -25,7 +32,7 @@
     [_leftImageView setContentMode:UIViewContentModeScaleAspectFit];
     [_leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(10);
-        make.left.mas_equalTo(10);
+        make.left.mas_equalTo(MARGIN_LEFT);
         make.height.mas_equalTo(self.height - 20);
         make.width.mas_equalTo(self.height - 10);
     }];

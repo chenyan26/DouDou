@@ -14,6 +14,14 @@
 
 @implementation DDHighlightViewController
 
+- (instancetype)init
+{
+    if (self =[super init]){
+        [self setHidesBottomBarWhenPushed:YES];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -26,14 +34,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (instancetype)init
-{
-    if (self =[super init]){
-        [self setHidesBottomBarWhenPushed:YES];
-    }
-    return self;
 }
 
 /*

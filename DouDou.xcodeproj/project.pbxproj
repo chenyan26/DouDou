@@ -25,7 +25,6 @@
 		5F5901BF1D4B0B00009F7DFA /* return_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901BC1D4B0B00009F7DFA /* return_button@2x.png */; };
 		5F5901C01D4B0B00009F7DFA /* return_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901BD1D4B0B00009F7DFA /* return_button@3x.png */; };
 		5F5901C51D4B0CD1009F7DFA /* DDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901C41D4B0CD1009F7DFA /* DDNavigationViewController.m */; };
-		5F5901CB1D4B0FAD009F7DFA /* DDDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901CA1D4B0FAD009F7DFA /* DDDialViewController.m */; };
 		5F5901CE1D4B0FBC009F7DFA /* DDContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901CD1D4B0FBC009F7DFA /* DDContactsViewController.m */; };
 		5F5901D11D4B0FDD009F7DFA /* DDMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901D01D4B0FDD009F7DFA /* DDMoreViewController.m */; };
 		5F5901D41D4B137A009F7DFA /* DDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901D31D4B137A009F7DFA /* DDLoginViewController.m */; };
@@ -45,6 +44,18 @@
 		5F59021E1D4EDE8D009F7DFA /* DDShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59021D1D4EDE8D009F7DFA /* DDShareViewController.m */; };
 		5F59022C1D4EEFA4009F7DFA /* DDContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59022B1D4EEFA4009F7DFA /* DDContactsCell.m */; };
 		5F59022F1D503A01009F7DFA /* DDContactsSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59022E1D503A01009F7DFA /* DDContactsSearchViewController.m */; };
+		5F5902391D504DE8009F7DFA /* DDContactsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902381D504DE8009F7DFA /* DDContactsHeadView.m */; };
+		5F59023F1D506193009F7DFA /* DDAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59023E1D506193009F7DFA /* DDAddContactViewController.m */; };
+		5F5902421D507CF1009F7DFA /* DDLabelCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902411D507CF1009F7DFA /* DDLabelCellView.m */; };
+		5F5902451D508D4C009F7DFA /* DDImageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902441D508D4C009F7DFA /* DDImageCellView.m */; };
+		5F59024B1D50D470009F7DFA /* DDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59024A1D50D470009F7DFA /* DDDetailViewController.m */; };
+		5F5902511D50D6F0009F7DFA /* DDDialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902501D50D6F0009F7DFA /* DDDialCell.m */; };
+		5F5902541D50D9AF009F7DFA /* DDCallRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902531D50D9AF009F7DFA /* DDCallRecord.m */; };
+		5F5902571D50DB05009F7DFA /* DDContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902561D50DB05009F7DFA /* DDContact.m */; };
+		5F59025A1D50DEBC009F7DFA /* DDDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902591D50DEBC009F7DFA /* DDDialViewController.m */; };
+		5F5902631D518E51009F7DFA /* DDCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902621D518E51009F7DFA /* DDCallViewController.m */; };
+		5F5902661D51A166009F7DFA /* DDDialBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902651D51A166009F7DFA /* DDDialBoardView.m */; };
+		5F98D6EB1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */; };
 		81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */; };
 		F69A7A736F444C16E65185F4 /* Pods_DouDou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7297474A5DBB664413A96E8B /* Pods_DouDou.framework */; };
 /* End PBXBuildFile section */
@@ -95,8 +106,6 @@
 		5F5901BD1D4B0B00009F7DFA /* return_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "return_button@3x.png"; path = "Resource/return_button@3x.png"; sourceTree = "<group>"; };
 		5F5901C31D4B0CD1009F7DFA /* DDNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNavigationViewController.h; sourceTree = "<group>"; };
 		5F5901C41D4B0CD1009F7DFA /* DDNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNavigationViewController.m; sourceTree = "<group>"; };
-		5F5901C91D4B0FAD009F7DFA /* DDDialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDialViewController.h; sourceTree = "<group>"; };
-		5F5901CA1D4B0FAD009F7DFA /* DDDialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDialViewController.m; sourceTree = "<group>"; };
 		5F5901CC1D4B0FBC009F7DFA /* DDContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsViewController.h; sourceTree = "<group>"; };
 		5F5901CD1D4B0FBC009F7DFA /* DDContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsViewController.m; sourceTree = "<group>"; };
 		5F5901CF1D4B0FDD009F7DFA /* DDMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMoreViewController.h; sourceTree = "<group>"; };
@@ -129,6 +138,29 @@
 		5F59022B1D4EEFA4009F7DFA /* DDContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsCell.m; sourceTree = "<group>"; };
 		5F59022D1D503A01009F7DFA /* DDContactsSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsSearchViewController.h; sourceTree = "<group>"; };
 		5F59022E1D503A01009F7DFA /* DDContactsSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsSearchViewController.m; sourceTree = "<group>"; };
+		5F5902371D504DE8009F7DFA /* DDContactsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsHeadView.h; sourceTree = "<group>"; };
+		5F5902381D504DE8009F7DFA /* DDContactsHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsHeadView.m; sourceTree = "<group>"; };
+		5F59023D1D506193009F7DFA /* DDAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAddContactViewController.h; sourceTree = "<group>"; };
+		5F59023E1D506193009F7DFA /* DDAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAddContactViewController.m; sourceTree = "<group>"; };
+		5F5902401D507CF1009F7DFA /* DDLabelCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLabelCellView.h; sourceTree = "<group>"; };
+		5F5902411D507CF1009F7DFA /* DDLabelCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLabelCellView.m; sourceTree = "<group>"; };
+		5F5902431D508D4C009F7DFA /* DDImageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImageCellView.h; sourceTree = "<group>"; };
+		5F5902441D508D4C009F7DFA /* DDImageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImageCellView.m; sourceTree = "<group>"; };
+		5F5902491D50D470009F7DFA /* DDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDetailViewController.h; sourceTree = "<group>"; };
+		5F59024A1D50D470009F7DFA /* DDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDetailViewController.m; sourceTree = "<group>"; };
+		5F59024F1D50D6F0009F7DFA /* DDDialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDialCell.h; sourceTree = "<group>"; };
+		5F5902501D50D6F0009F7DFA /* DDDialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDialCell.m; sourceTree = "<group>"; };
+		5F5902521D50D9AF009F7DFA /* DDCallRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCallRecord.h; sourceTree = "<group>"; };
+		5F5902531D50D9AF009F7DFA /* DDCallRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCallRecord.m; sourceTree = "<group>"; };
+		5F5902551D50DB05009F7DFA /* DDContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContact.h; sourceTree = "<group>"; };
+		5F5902561D50DB05009F7DFA /* DDContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContact.m; sourceTree = "<group>"; };
+		5F5902581D50DEBC009F7DFA /* DDDialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDialViewController.h; sourceTree = "<group>"; };
+		5F5902591D50DEBC009F7DFA /* DDDialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDialViewController.m; sourceTree = "<group>"; };
+		5F5902611D518E51009F7DFA /* DDCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCallViewController.h; sourceTree = "<group>"; };
+		5F5902621D518E51009F7DFA /* DDCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCallViewController.m; sourceTree = "<group>"; };
+		5F5902641D51A166009F7DFA /* DDDialBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDialBoardView.h; sourceTree = "<group>"; };
+		5F5902651D51A166009F7DFA /* DDDialBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDialBoardView.m; sourceTree = "<group>"; };
+		5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteEmoticonBtn@2x.png"; path = "Resource/DeleteEmoticonBtn@2x.png"; sourceTree = "<group>"; };
 		7297474A5DBB664413A96E8B /* Pods_DouDou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531A7B4D137B48EF58A06AE /* Pods-DouDouTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDouTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +297,8 @@
 			children = (
 				5F59022A1D4EEFA4009F7DFA /* DDContactsCell.h */,
 				5F59022B1D4EEFA4009F7DFA /* DDContactsCell.m */,
+				5F5902371D504DE8009F7DFA /* DDContactsHeadView.h */,
+				5F5902381D504DE8009F7DFA /* DDContactsHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,8 +306,8 @@
 		5F05AEB71D499FB700FF8495 /* Dial---------------------- */ = {
 			isa = PBXGroup;
 			children = (
-				5F5901C91D4B0FAD009F7DFA /* DDDialViewController.h */,
-				5F5901CA1D4B0FAD009F7DFA /* DDDialViewController.m */,
+				5F5902581D50DEBC009F7DFA /* DDDialViewController.h */,
+				5F5902591D50DEBC009F7DFA /* DDDialViewController.m */,
 				5F05AEBB1D499FB700FF8495 /* Model */,
 				5F05AEBC1D499FB700FF8495 /* View */,
 			);
@@ -284,6 +318,8 @@
 		5F05AEBB1D499FB700FF8495 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F5902521D50D9AF009F7DFA /* DDCallRecord.h */,
+				5F5902531D50D9AF009F7DFA /* DDCallRecord.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +327,10 @@
 		5F05AEBC1D499FB700FF8495 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F59024F1D50D6F0009F7DFA /* DDDialCell.h */,
+				5F5902501D50D6F0009F7DFA /* DDDialCell.m */,
+				5F5902641D51A166009F7DFA /* DDDialBoardView.h */,
+				5F5902651D51A166009F7DFA /* DDDialBoardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,6 +477,7 @@
 		5F5901BA1D4B0AF7009F7DFA /* img */ = {
 			isa = PBXGroup;
 			children = (
+				5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */,
 				5F5901FD1D4B5D3D009F7DFA /* tx01.png */,
 				5F5901FE1D4B5D3D009F7DFA /* tx01@2x.png */,
 				5F5901FF1D4B5D3D009F7DFA /* tx01@3x.png */,
@@ -464,6 +505,8 @@
 			children = (
 				5F5901DA1D4B2DED009F7DFA /* DDAccount.h */,
 				5F5901DB1D4B2DED009F7DFA /* DDAccount.m */,
+				5F5902551D50DB05009F7DFA /* DDContact.h */,
+				5F5902561D50DB05009F7DFA /* DDContact.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,6 +516,7 @@
 			children = (
 				5F5902071D4EDC88009F7DFA /* AddContact */,
 				5F59020A1D4EDC88009F7DFA /* ContactBook */,
+				5F59025E1D518E1F009F7DFA /* Call */,
 				5F59020D1D4EDC88009F7DFA /* Detail */,
 				5F5902131D4EDCE1009F7DFA /* Highlight */,
 				5F5902101D4EDC88009F7DFA /* Share */,
@@ -484,6 +528,8 @@
 		5F5902071D4EDC88009F7DFA /* AddContact */ = {
 			isa = PBXGroup;
 			children = (
+				5F59023D1D506193009F7DFA /* DDAddContactViewController.h */,
+				5F59023E1D506193009F7DFA /* DDAddContactViewController.m */,
 				5F5902081D4EDC88009F7DFA /* Model */,
 				5F5902091D4EDC88009F7DFA /* View */,
 			);
@@ -500,6 +546,10 @@
 		5F5902091D4EDC88009F7DFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F5902401D507CF1009F7DFA /* DDLabelCellView.h */,
+				5F5902411D507CF1009F7DFA /* DDLabelCellView.m */,
+				5F5902431D508D4C009F7DFA /* DDImageCellView.h */,
+				5F5902441D508D4C009F7DFA /* DDImageCellView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -530,6 +580,8 @@
 		5F59020D1D4EDC88009F7DFA /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5F5902491D50D470009F7DFA /* DDDetailViewController.h */,
+				5F59024A1D50D470009F7DFA /* DDDetailViewController.m */,
 				5F59020E1D4EDC88009F7DFA /* Model */,
 				5F59020F1D4EDC88009F7DFA /* View */,
 			);
@@ -595,6 +647,31 @@
 			sourceTree = "<group>";
 		};
 		5F5902151D4EDCE1009F7DFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F59025E1D518E1F009F7DFA /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				5F5902611D518E51009F7DFA /* DDCallViewController.h */,
+				5F5902621D518E51009F7DFA /* DDCallViewController.m */,
+				5F59025F1D518E1F009F7DFA /* Model */,
+				5F5902601D518E1F009F7DFA /* View */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
+		5F59025F1D518E1F009F7DFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F5902601D518E1F009F7DFA /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -699,6 +776,7 @@
 			files = (
 				5F5901F11D4B510F009F7DFA /* right_icon@3x.png in Resources */,
 				5F5901F01D4B510F009F7DFA /* right_icon@2x.png in Resources */,
+				5F98D6EB1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png in Resources */,
 				5F5902021D4B5D3D009F7DFA /* tx01@3x.png in Resources */,
 				5F5902001D4B5D3D009F7DFA /* tx01.png in Resources */,
 				5F5901BF1D4B0B00009F7DFA /* return_button@2x.png in Resources */,
@@ -820,20 +898,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5902541D50D9AF009F7DFA /* DDCallRecord.m in Sources */,
 				5F05AEF41D49C92200FF8495 /* DDTestViewController.m in Sources */,
 				5F5902051D4B9B74009F7DFA /* MBProgressHUD+CY.m in Sources */,
 				5F59021B1D4EDDA9009F7DFA /* DDHighlightViewController.m in Sources */,
+				5F59023F1D506193009F7DFA /* DDAddContactViewController.m in Sources */,
 				5F5901E21D4B45DB009F7DFA /* DDMoreDefaultCell.m in Sources */,
 				5F5901CE1D4B0FBC009F7DFA /* DDContactsViewController.m in Sources */,
-				5F5901CB1D4B0FAD009F7DFA /* DDDialViewController.m in Sources */,
+				5F5902391D504DE8009F7DFA /* DDContactsHeadView.m in Sources */,
 				5F05AED11D49A5FC00FF8495 /* DDRootViewController.m in Sources */,
+				5F5902511D50D6F0009F7DFA /* DDDialCell.m in Sources */,
 				5F5901D41D4B137A009F7DFA /* DDLoginViewController.m in Sources */,
+				5F5902421D507CF1009F7DFA /* DDLabelCellView.m in Sources */,
 				5F5901B91D4B06DE009F7DFA /* DDRegisterViewController.m in Sources */,
+				5F5902661D51A166009F7DFA /* DDDialBoardView.m in Sources */,
 				5F05AECB1D49A04B00FF8495 /* UIImage+CY.m in Sources */,
 				5F5901FC1D4B543F009F7DFA /* DDMoreImageCell.m in Sources */,
 				5F05AE8C1D48F70E00FF8495 /* AppDelegate.m in Sources */,
 				5F59021E1D4EDE8D009F7DFA /* DDShareViewController.m in Sources */,
 				5F05AECE1D49A30300FF8495 /* UIView+CY.m in Sources */,
+				5F59025A1D50DEBC009F7DFA /* DDDialViewController.m in Sources */,
 				5F59022F1D503A01009F7DFA /* DDContactsSearchViewController.m in Sources */,
 				5F5901D11D4B0FDD009F7DFA /* DDMoreViewController.m in Sources */,
 				5F05AE891D48F70D00FF8495 /* main.m in Sources */,
@@ -841,9 +925,13 @@
 				5F5901A91D4AFEEB009F7DFA /* DDLoginCellView.m in Sources */,
 				5F5901E51D4B4BBE009F7DFA /* DDCommonTableViewCell.m in Sources */,
 				5F59022C1D4EEFA4009F7DFA /* DDContactsCell.m in Sources */,
+				5F5902571D50DB05009F7DFA /* DDContact.m in Sources */,
+				5F5902451D508D4C009F7DFA /* DDImageCellView.m in Sources */,
 				5F5901C51D4B0CD1009F7DFA /* DDNavigationViewController.m in Sources */,
+				5F59024B1D50D470009F7DFA /* DDDetailViewController.m in Sources */,
 				5F5901B11D4AFF47009F7DFA /* DDForgetPwdViewController.m in Sources */,
 				5F5901D81D4B2D6D009F7DFA /* DDAccountTool.m in Sources */,
+				5F5902631D518E51009F7DFA /* DDCallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

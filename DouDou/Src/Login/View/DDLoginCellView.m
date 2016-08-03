@@ -21,8 +21,7 @@
 
 - (instancetype)init
 {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         [self addSubview:self.textField];
         [self addSubview:self.imageView];
     }
@@ -41,7 +40,7 @@
         make.width.equalTo(self.mas_height);
     }];
     
-    
+    [_textField setReturnKeyType:UIReturnKeyDone];
     [_textField setClearButtonMode:UITextFieldViewModeAlways];
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);

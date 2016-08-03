@@ -10,9 +10,6 @@
 
 @interface DDMoreImageCell : DDCommonTableViewCell
 
-@property (nonatomic, strong) UIImageView *leftImageView;
-@property (nonatomic, strong) UILabel *label;
-
 - (void)setWithLeftImage:(UIImage *)image andText:(NSString *)text;
 
 @end

@@ -10,4 +10,9 @@
 
 @interface DDContactsCell : DDCommonTableViewCell
 
+- (void)setWithLeftImageName:(NSString *)leftName andText:(NSString *)text;
+
+// TODO 改为用 model ：Contact
+
+
 @end

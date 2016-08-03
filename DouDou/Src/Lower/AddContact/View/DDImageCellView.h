@@ -1,5 +1,5 @@
 //
-//  DDDialViewController.h
+//  DDImageCellView.h
 //  DouDou
 //
 //  Created by echo on 8/2/16.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DDDialViewController : UIViewController
+@interface DDImageCellView : UIView
+
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end

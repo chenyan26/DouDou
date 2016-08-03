@@ -9,6 +9,14 @@
 #import "DDMoreDefaultCell.h"
 #import <Masonry/Masonry.h>
 
+@interface DDMoreDefaultCell ()
+
+@property (nonatomic, strong) UIImageView *leftImageView;
+@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIImageView *rightImageView;
+
+@end
+
 @implementation DDMoreDefaultCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -30,7 +38,6 @@
 
 - (void)layoutSubviews
 {
-    self.leftFreeSpace = 10;
     [super layoutSubviews];
     
     [_leftImageView setContentMode:UIViewContentModeCenter];
@@ -47,8 +54,6 @@
         make.height.equalTo(self);
     }];
     
-    [_rightImageView setContentMode:UIViewContentModeCenter];
-    [_rightImageView setImage:[UIImage imageNamed:@"right_icon"]];
     [_rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(0);
         make.top.mas_equalTo(0);
@@ -86,6 +91,8 @@
 {
     if (_rightImageView == nil) {
         _rightImageView = [[UIImageView alloc] init];
+        [_rightImageView setContentMode:UIViewContentModeCenter];
+        [_rightImageView setImage:[UIImage imageNamed:@"right_icon"]];
     }
     return _rightImageView;
 }

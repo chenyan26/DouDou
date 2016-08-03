@@ -15,7 +15,7 @@
 
 #import "DDRootViewController.h"
 
-@interface DDLoginViewController ()
+@interface DDLoginViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, weak) DDLoginCellView *phoneView;
 @property (nonatomic, weak) DDLoginCellView *pwdView;
@@ -39,6 +39,7 @@
     
     DDLoginCellView *v2= [[DDLoginCellView alloc] init];
     _pwdView = v2;
+    _pwdView.textField.delegate = self;
     
     UIButton *button = [[UIButton alloc] init];
     _loginBtn = button;
@@ -79,6 +80,11 @@
 
 #pragma mark - UITextFieldDelegate
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 #pragma mark - notifacation event
 
@@ -91,6 +97,8 @@
         [_loginBtn setEnabled:NO];
     }
 }
+
+
 
 #pragma mark - event response
 
@@ -131,7 +139,7 @@
 - (void) setupSubviews {
     
     //手机号
-    [_phoneView.textField setKeyboardType:UIKeyboardTypeNumberPad];
+    [_phoneView.textField setKeyboardType:UIKeyboardTypePhonePad];
     
     [_phoneView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);

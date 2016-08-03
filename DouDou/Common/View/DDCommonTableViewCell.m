@@ -15,6 +15,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setBackgroundColor:[UIColor whiteColor]];
         
+        _leftFreeSpace = MARGIN_LEFT;
         _topLineStyle = CellLineStyleNone;
         _bottomLineStyle = CellLineStyleDefault;
     }

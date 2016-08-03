@@ -7,14 +7,18 @@
 //
 
 #import "DDContactsViewController.h"
-#import "DDContactsCell.h"
+
 #import "DDMoreDefaultCell.h"
+#import "DDContactsCell.h"
+#import "DDContactsHeadView.h"
 
 #import "DDContactsSearchViewController.h"
+#import "DDAddContactViewController.h"
 
 @interface DDContactsViewController ()<UISearchBarDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *addContactBtn;
+@property (nonatomic, strong) DDAddContactViewController *addVC;
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) DDContactsSearchViewController *searchVC;
@@ -23,6 +27,8 @@
 @end
 
 static const NSString *kDefaultCell = @"kDefaultCell";
+static const NSString *kContactsCell = @"kContactsCell";
+static const NSString *kContactsHead = @"kContactsHead";
 
 
 @implementation DDContactsViewController
@@ -43,6 +49,9 @@ static const NSString *kDefaultCell = @"kDefaultCell";
     [self.tableView setTableFooterView:[[UIView alloc] init]];
     
     [self.tableView registerClass:[DDMoreDefaultCell class] forCellReuseIdentifier:(NSString *)kDefaultCell];
+    [self.tableView registerClass:[DDContactsCell class] forCellReuseIdentifier:(NSString *)kContactsCell];
+    
+    [self.tableView registerClass:[DDContactsHeadView class] forHeaderFooterViewReuseIdentifier:(NSString *)kContactsHead];
     
     [self.navigationItem setRightBarButtonItem:self.addContactBtn];
 }
@@ -56,7 +65,7 @@ static const NSString *kDefaultCell = @"kDefaultCell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 1 + 1;
+    return 1 + 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -73,35 +82,67 @@ static const NSString *kDefaultCell = @"kDefaultCell";
     return HEIGHT_DEFAULT_CELL;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return nil;
+    } else {
+        DDContactsHeadView *headView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)kContactsHead];
+        [headView setTitle:@"K"];
+        return headView;
+    }
+}
 
-    DDMoreDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kDefaultCell forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
+        DDMoreDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kDefaultCell forIndexPath:indexPath];
+        [cell setTopLineStyle:CellLineStyleNone];
+        
         switch (indexPath.row) {
             case 0:
                 [cell setWithLeftImageName:@"tabbar_meHL" andText:@"新的朋友"];
+                [cell setBottomLineStyle:CellLineStyleFill];
                 break;
             case 1:
                 [cell setWithLeftImageName:@"tabbar_meHL" andText:@"手机通讯录"];
+                [cell setBottomLineStyle:CellLineStyleFill];
                 break;
             case 2:
                 [cell setWithLeftImageName:@"tabbar_meHL" andText:@"手机看家"];
+                [cell setBottomLineStyle:CellLineStyleNone];
                 break;
             default:
                 break;
         }
+        return cell;
+    } else {
+        DDContactsCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kContactsCell forIndexPath:indexPath];
+        [cell setWithLeftImageName:@"add_friend_icon_offical" andText:@"kiyola"];
+        return cell;
     }
-    
-    return cell;
 }
 
 #pragma mark - private methods
 
+#pragma mark - event response
+
+- (void)addContactBtnClick
+{
+    [self.navigationController pushViewController:[[DDAddContactViewController alloc] init] animated:YES];
+}
 
 
 #pragma mark - UITabelViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 0;
+    } else {
+        return MARGIN_CELL;
+    }
+}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,8 +193,7 @@ static const NSString *kDefaultCell = @"kDefaultCell";
 - (UIBarButtonItem *)addContactBtn
 {
     if (_addContactBtn == nil) {
-        _addContactBtn = [[UIBarButtonItem alloc] init];
-        [_addContactBtn setImage:[UIImage imageNamed:@"barbuttonicon_add"]];
+        _addContactBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_add"] style:UIBarButtonItemStylePlain target:self action:@selector(addContactBtnClick)];
         [_addContactBtn setTintColor:[UIColor whiteColor]];
     }
     return _addContactBtn;

@@ -11,6 +11,7 @@
 @interface DDAccount : NSObject
 
 @property (nonatomic, copy) NSString *number;
+
 @property (nonatomic, copy) NSString *pwd;
 
 @end

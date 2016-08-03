@@ -13,7 +13,7 @@
 #import "DDHighlightViewController.h"
 #import "DDShareViewController.h"
 
-@interface DDMoreViewController ()<UIAlertViewDelegate>
+@interface DDMoreViewController ()
 
 @end
 
@@ -129,16 +129,16 @@ static const NSString *kDefaultCell = @"kDefaultCell";
             [self.navigationController pushViewController:shareVC animated:YES];
         }
     }else if (indexPath.section == 2) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"注销登录" message:@"确定注销登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
-        [alert show];
-    }
-}
-
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        NSLog(@"确定注销登录");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"注销登录" message:@"确定注销登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // TODO 注销登录的流程
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alert addAction:confirm];
+        [alert addAction:cancel];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
