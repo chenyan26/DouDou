@@ -40,8 +40,6 @@
 		5F5902011D4B5D3D009F7DFA /* tx01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901FE1D4B5D3D009F7DFA /* tx01@2x.png */; };
 		5F5902021D4B5D3D009F7DFA /* tx01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901FF1D4B5D3D009F7DFA /* tx01@3x.png */; };
 		5F5902051D4B9B74009F7DFA /* MBProgressHUD+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902041D4B9B74009F7DFA /* MBProgressHUD+CY.m */; };
-		5F59021B1D4EDDA9009F7DFA /* DDHighlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59021A1D4EDDA9009F7DFA /* DDHighlightViewController.m */; };
-		5F59021E1D4EDE8D009F7DFA /* DDShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59021D1D4EDE8D009F7DFA /* DDShareViewController.m */; };
 		5F59022C1D4EEFA4009F7DFA /* DDContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59022B1D4EEFA4009F7DFA /* DDContactsCell.m */; };
 		5F59022F1D503A01009F7DFA /* DDContactsSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59022E1D503A01009F7DFA /* DDContactsSearchViewController.m */; };
 		5F5902391D504DE8009F7DFA /* DDContactsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902381D504DE8009F7DFA /* DDContactsHeadView.m */; };
@@ -56,6 +54,14 @@
 		5F5902631D518E51009F7DFA /* DDCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902621D518E51009F7DFA /* DDCallViewController.m */; };
 		5F5902661D51A166009F7DFA /* DDDialBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902651D51A166009F7DFA /* DDDialBoardView.m */; };
 		5F98D6EB1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */; };
+		5F98D7001D53252F00AED0ED /* DDAccountAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D6FF1D53252F00AED0ED /* DDAccountAPIManager.m */; };
+		5F98D7031D53264900AED0ED /* DDContactsAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7021D53264900AED0ED /* DDContactsAPIManager.m */; };
+		5F98D7061D532A4600AED0ED /* CYHTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7051D532A4600AED0ED /* CYHTTPTool.m */; };
+		5F98D7091D532B0600AED0ED /* DDBaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7081D532B0600AED0ED /* DDBaseAPIManager.m */; };
+		5F98D7221D54345200AED0ED /* DDJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7211D54345200AED0ED /* DDJsonResponse.m */; };
+		5F98D7251D54349B00AED0ED /* DDCodeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7241D54349B00AED0ED /* DDCodeResponse.m */; };
+		5F98D7281D546D8C00AED0ED /* MBProgressHUD+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7271D546D8C00AED0ED /* MBProgressHUD+CY.m */; };
+		5F98D7311D5482C000AED0ED /* DDControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7301D5482C000AED0ED /* DDControllerTool.m */; };
 		81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */; };
 		F69A7A736F444C16E65185F4 /* Pods_DouDou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7297474A5DBB664413A96E8B /* Pods_DouDou.framework */; };
 /* End PBXBuildFile section */
@@ -130,10 +136,6 @@
 		5F5901FF1D4B5D3D009F7DFA /* tx01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tx01@3x.png"; path = "Resource/tx01@3x.png"; sourceTree = "<group>"; };
 		5F5902031D4B9B74009F7DFA /* MBProgressHUD+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CY.h"; sourceTree = "<group>"; };
 		5F5902041D4B9B74009F7DFA /* MBProgressHUD+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CY.m"; sourceTree = "<group>"; };
-		5F5902191D4EDDA9009F7DFA /* DDHighlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHighlightViewController.h; sourceTree = "<group>"; };
-		5F59021A1D4EDDA9009F7DFA /* DDHighlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHighlightViewController.m; sourceTree = "<group>"; };
-		5F59021C1D4EDE8D009F7DFA /* DDShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDShareViewController.h; sourceTree = "<group>"; };
-		5F59021D1D4EDE8D009F7DFA /* DDShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDShareViewController.m; sourceTree = "<group>"; };
 		5F59022A1D4EEFA4009F7DFA /* DDContactsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsCell.h; sourceTree = "<group>"; };
 		5F59022B1D4EEFA4009F7DFA /* DDContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsCell.m; sourceTree = "<group>"; };
 		5F59022D1D503A01009F7DFA /* DDContactsSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsSearchViewController.h; sourceTree = "<group>"; };
@@ -161,6 +163,22 @@
 		5F5902641D51A166009F7DFA /* DDDialBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDialBoardView.h; sourceTree = "<group>"; };
 		5F5902651D51A166009F7DFA /* DDDialBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDialBoardView.m; sourceTree = "<group>"; };
 		5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteEmoticonBtn@2x.png"; path = "Resource/DeleteEmoticonBtn@2x.png"; sourceTree = "<group>"; };
+		5F98D6FE1D53252F00AED0ED /* DDAccountAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDAccountAPIManager.h; path = DouDou/Common/APIManager/DDAccountAPIManager.h; sourceTree = SOURCE_ROOT; };
+		5F98D6FF1D53252F00AED0ED /* DDAccountAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDAccountAPIManager.m; path = DouDou/Common/APIManager/DDAccountAPIManager.m; sourceTree = SOURCE_ROOT; };
+		5F98D7011D53264900AED0ED /* DDContactsAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDContactsAPIManager.h; path = DouDou/Common/APIManager/DDContactsAPIManager.h; sourceTree = SOURCE_ROOT; };
+		5F98D7021D53264900AED0ED /* DDContactsAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDContactsAPIManager.m; path = DouDou/Common/APIManager/DDContactsAPIManager.m; sourceTree = SOURCE_ROOT; };
+		5F98D7041D532A4600AED0ED /* CYHTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYHTTPTool.h; sourceTree = "<group>"; };
+		5F98D7051D532A4600AED0ED /* CYHTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYHTTPTool.m; sourceTree = "<group>"; };
+		5F98D7071D532B0600AED0ED /* DDBaseAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDBaseAPIManager.h; path = DouDou/Common/APIManager/DDBaseAPIManager.h; sourceTree = SOURCE_ROOT; };
+		5F98D7081D532B0600AED0ED /* DDBaseAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDBaseAPIManager.m; path = DouDou/Common/APIManager/DDBaseAPIManager.m; sourceTree = SOURCE_ROOT; };
+		5F98D7201D54345200AED0ED /* DDJsonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDJsonResponse.h; sourceTree = "<group>"; };
+		5F98D7211D54345200AED0ED /* DDJsonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDJsonResponse.m; sourceTree = "<group>"; };
+		5F98D7231D54349B00AED0ED /* DDCodeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCodeResponse.h; sourceTree = "<group>"; };
+		5F98D7241D54349B00AED0ED /* DDCodeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCodeResponse.m; sourceTree = "<group>"; };
+		5F98D7261D546D8C00AED0ED /* MBProgressHUD+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CY.h"; sourceTree = "<group>"; };
+		5F98D7271D546D8C00AED0ED /* MBProgressHUD+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CY.m"; sourceTree = "<group>"; };
+		5F98D72F1D5482C000AED0ED /* DDControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDControllerTool.h; sourceTree = "<group>"; };
+		5F98D7301D5482C000AED0ED /* DDControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDControllerTool.m; sourceTree = "<group>"; };
 		7297474A5DBB664413A96E8B /* Pods_DouDou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531A7B4D137B48EF58A06AE /* Pods-DouDouTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDouTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -371,7 +389,7 @@
 				5F5901D91D4B2DDC009F7DFA /* Model */,
 				5F5901D51D4B2D1C009F7DFA /* Tool */,
 				5F05AEC51D499FD700FF8495 /* Category */,
-				5F05AEC41D499FD700FF8495 /* ApiManager */,
+				5F05AEC41D499FD700FF8495 /* APIManager */,
 				5F05AEC61D499FD700FF8495 /* DBHelper */,
 				5F05AEC81D499FD700FF8495 /* View */,
 				5F05AEC71D499FD700FF8495 /* Lib */,
@@ -380,10 +398,18 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		5F05AEC41D499FD700FF8495 /* ApiManager */ = {
+		5F05AEC41D499FD700FF8495 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				5F98D7101D542F2000AED0ED /* Model */,
+				5F98D7071D532B0600AED0ED /* DDBaseAPIManager.h */,
+				5F98D7081D532B0600AED0ED /* DDBaseAPIManager.m */,
+				5F98D6FE1D53252F00AED0ED /* DDAccountAPIManager.h */,
+				5F98D6FF1D53252F00AED0ED /* DDAccountAPIManager.m */,
+				5F98D7011D53264900AED0ED /* DDContactsAPIManager.h */,
+				5F98D7021D53264900AED0ED /* DDContactsAPIManager.m */,
 			);
+			name = APIManager;
 			path = ApiManager;
 			sourceTree = "<group>";
 		};
@@ -394,6 +420,8 @@
 				5F05AECD1D49A30200FF8495 /* UIView+CY.m */,
 				5F05AEC91D49A04B00FF8495 /* UIImage+CY.h */,
 				5F05AECA1D49A04B00FF8495 /* UIImage+CY.m */,
+				5F98D7261D546D8C00AED0ED /* MBProgressHUD+CY.h */,
+				5F98D7271D546D8C00AED0ED /* MBProgressHUD+CY.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -496,6 +524,10 @@
 			children = (
 				5F5901D61D4B2D6D009F7DFA /* DDAccountTool.h */,
 				5F5901D71D4B2D6D009F7DFA /* DDAccountTool.m */,
+				5F98D7041D532A4600AED0ED /* CYHTTPTool.h */,
+				5F98D7051D532A4600AED0ED /* CYHTTPTool.m */,
+				5F98D72F1D5482C000AED0ED /* DDControllerTool.h */,
+				5F98D7301D5482C000AED0ED /* DDControllerTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -518,8 +550,6 @@
 				5F59020A1D4EDC88009F7DFA /* ContactBook */,
 				5F59025E1D518E1F009F7DFA /* Call */,
 				5F59020D1D4EDC88009F7DFA /* Detail */,
-				5F5902131D4EDCE1009F7DFA /* Highlight */,
-				5F5902101D4EDC88009F7DFA /* Share */,
 			);
 			name = "Lower----------------------";
 			path = Lower;
@@ -602,57 +632,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5F5902101D4EDC88009F7DFA /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				5F59021C1D4EDE8D009F7DFA /* DDShareViewController.h */,
-				5F59021D1D4EDE8D009F7DFA /* DDShareViewController.m */,
-				5F5902111D4EDC88009F7DFA /* Model */,
-				5F5902121D4EDC88009F7DFA /* View */,
-			);
-			path = Share;
-			sourceTree = "<group>";
-		};
-		5F5902111D4EDC88009F7DFA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5F5902121D4EDC88009F7DFA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5F5902131D4EDCE1009F7DFA /* Highlight */ = {
-			isa = PBXGroup;
-			children = (
-				5F5902191D4EDDA9009F7DFA /* DDHighlightViewController.h */,
-				5F59021A1D4EDDA9009F7DFA /* DDHighlightViewController.m */,
-				5F5902141D4EDCE1009F7DFA /* Model */,
-				5F5902151D4EDCE1009F7DFA /* View */,
-			);
-			name = Highlight;
-			path = DouDou/Src/Lower/Highlight;
-			sourceTree = SOURCE_ROOT;
-		};
-		5F5902141D4EDCE1009F7DFA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5F5902151D4EDCE1009F7DFA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		5F59025E1D518E1F009F7DFA /* Call */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +656,18 @@
 			);
 			path = View;
 			sourceTree = "<group>";
+		};
+		5F98D7101D542F2000AED0ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F98D7201D54345200AED0ED /* DDJsonResponse.h */,
+				5F98D7211D54345200AED0ED /* DDJsonResponse.m */,
+				5F98D7231D54349B00AED0ED /* DDCodeResponse.h */,
+				5F98D7241D54349B00AED0ED /* DDCodeResponse.m */,
+			);
+			name = Model;
+			path = DouDou/Common/APIManager/Model;
+			sourceTree = SOURCE_ROOT;
 		};
 		C0447FF8AD3DFCDFF1DF2FB6 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -901,21 +892,27 @@
 				5F5902541D50D9AF009F7DFA /* DDCallRecord.m in Sources */,
 				5F05AEF41D49C92200FF8495 /* DDTestViewController.m in Sources */,
 				5F5902051D4B9B74009F7DFA /* MBProgressHUD+CY.m in Sources */,
-				5F59021B1D4EDDA9009F7DFA /* DDHighlightViewController.m in Sources */,
+				5F98D7091D532B0600AED0ED /* DDBaseAPIManager.m in Sources */,
+				5F98D7251D54349B00AED0ED /* DDCodeResponse.m in Sources */,
 				5F59023F1D506193009F7DFA /* DDAddContactViewController.m in Sources */,
 				5F5901E21D4B45DB009F7DFA /* DDMoreDefaultCell.m in Sources */,
 				5F5901CE1D4B0FBC009F7DFA /* DDContactsViewController.m in Sources */,
 				5F5902391D504DE8009F7DFA /* DDContactsHeadView.m in Sources */,
 				5F05AED11D49A5FC00FF8495 /* DDRootViewController.m in Sources */,
 				5F5902511D50D6F0009F7DFA /* DDDialCell.m in Sources */,
+				5F98D7221D54345200AED0ED /* DDJsonResponse.m in Sources */,
+				5F98D7031D53264900AED0ED /* DDContactsAPIManager.m in Sources */,
 				5F5901D41D4B137A009F7DFA /* DDLoginViewController.m in Sources */,
 				5F5902421D507CF1009F7DFA /* DDLabelCellView.m in Sources */,
 				5F5901B91D4B06DE009F7DFA /* DDRegisterViewController.m in Sources */,
 				5F5902661D51A166009F7DFA /* DDDialBoardView.m in Sources */,
+				5F98D7001D53252F00AED0ED /* DDAccountAPIManager.m in Sources */,
 				5F05AECB1D49A04B00FF8495 /* UIImage+CY.m in Sources */,
+				5F98D7281D546D8C00AED0ED /* MBProgressHUD+CY.m in Sources */,
 				5F5901FC1D4B543F009F7DFA /* DDMoreImageCell.m in Sources */,
+				5F98D7061D532A4600AED0ED /* CYHTTPTool.m in Sources */,
 				5F05AE8C1D48F70E00FF8495 /* AppDelegate.m in Sources */,
-				5F59021E1D4EDE8D009F7DFA /* DDShareViewController.m in Sources */,
+				5F98D7311D5482C000AED0ED /* DDControllerTool.m in Sources */,
 				5F05AECE1D49A30300FF8495 /* UIView+CY.m in Sources */,
 				5F59025A1D50DEBC009F7DFA /* DDDialViewController.m in Sources */,
 				5F59022F1D503A01009F7DFA /* DDContactsSearchViewController.m in Sources */,
@@ -1060,6 +1057,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.caratel.DouDou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -1076,6 +1074,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.caratel.DouDou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

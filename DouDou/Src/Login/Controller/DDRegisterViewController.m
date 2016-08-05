@@ -11,11 +11,14 @@
 
 #import <Masonry/Masonry.h>
 
+#import "DDAccountAPIManager.h"
+#import "DDCodeResponse.h"
+
 @interface DDRegisterViewController ()<UIScrollViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, weak) UIScrollView *scrollView;
 
-@property (nonatomic, weak) DDLoginCellView *phoneView;
+@property (nonatomic, weak) DDLoginCellView *numberView;
 @property (nonatomic, weak) DDLoginCellView *verifyView;
 @property (nonatomic, weak) DDLoginCellView *pwdView;
 @property (nonatomic, weak) DDLoginCellView *rePwdView;
@@ -41,7 +44,7 @@
     _scrollView.delegate = self;
     
     DDLoginCellView *v1= [[DDLoginCellView alloc] init];
-    _phoneView = v1;
+    _numberView = v1;
     
     DDLoginCellView *v2= [[DDLoginCellView alloc] init];
     _verifyView = v2;
@@ -62,13 +65,18 @@
     _commitBtn = button;
     
     [self.view addSubview:_scrollView];
-    [_scrollView addSubview:_phoneView];
+    [_scrollView addSubview:_numberView];
     [_scrollView addSubview:_verifyView];
     [_verifyView addSubview:_verifyBtn];
     [_scrollView addSubview:_pwdView];
     [_scrollView addSubview:_rePwdView];
     [_scrollView addSubview:_inviteView];
     [_scrollView addSubview:_commitBtn];
+    
+    [_verifyBtn addTarget:self action:@selector(verifyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_commitBtn addTarget:self action:@selector(commitBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    _numberView.textField.delegate = self;
     
     [self setupSubviews];
     
@@ -83,9 +91,52 @@
 
 #pragma mark - UITextFieldDelegate
 
-
 #pragma mark - event response
 
+- (void)verifyBtnClick:(UIButton *)sender
+{
+    if (_numberView.textField.text.length == 0) {
+        [MBProgressHUD showShortMessage:@"请输入手机号码"];
+    } else {
+        [DDAccountAPIManager vcodeWithNumber:_numberView.textField.text success:^(DDCodeResponse *resopnseObj) {
+            if (! resopnseObj.errcode) {
+                [_verifyView.textField setText:resopnseObj.vcode];
+            } else {
+                [MBProgressHUD showShortMessage:@"验证码获取失败"];
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+}
+
+- (void)commitBtnClick:(UIButton *)sender
+{
+    if (_numberView.textField.text.length == 0) {
+        [MBProgressHUD showShortMessage:@"请输入手机号码"];
+    } else if (_verifyView.textField.text.length == 0) {
+        [MBProgressHUD showShortMessage:@"请获取验证码"];
+    } else if (_pwdView.textField.text.length == 0) {
+        [MBProgressHUD showShortMessage:@"请获取密码"];
+    } else if (! [_pwdView.textField.text isEqualToString:_rePwdView.textField.text] ) {
+        [MBProgressHUD showShortMessage:@"请保证确认密码与密码一致"];
+    } else {
+        MBProgressHUD *hud = [MBProgressHUD showMessage:@"正在注册"];
+        [DDAccountAPIManager signupWithNumber:_numberView.textField.text code:_verifyView.textField.text password:_pwdView.textField.text success:^(DDJsonResponse *resopnseObj) {
+            
+            [hud setHidden:YES];
+            if (! resopnseObj.errcode) {
+                [MBProgressHUD showShortMessage:@"注册成功，请登录"];
+                [self.navigationController popViewControllerAnimated:YES];
+            } else {
+                [MBProgressHUD showShortMessage:@"注册失败，请重试"];
+            }
+        } failure:^(NSError *error) {
+            [hud setHidden:YES];
+            [MBProgressHUD showShortMessage:@"注册失败，请重试"];
+        }];
+    }
+}
 
 #pragma mark - private methods
 
@@ -100,19 +151,19 @@
     [_scrollView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
     
     //手机号
-    [_phoneView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_numberView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.mas_equalTo(MARGIN_CELL);
         make.height.mas_equalTo(HEIGHT_LOGINCELL);
         make.width.equalTo(self.view);
     }];
-    [_phoneView.textField setKeyboardType:UIKeyboardTypeNumberPad];
-    [_phoneView setWithImageName:@"tabbar_discover" andText:@"请输入手机号码"];
+    [_numberView.textField setKeyboardType:UIKeyboardTypeNumberPad];
+    [_numberView setWithImageName:@"tabbar_discover" andText:@"请输入手机号码"];
     
     //验证码
     [_verifyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.equalTo(_phoneView.mas_bottom).with.offset(1.0f);
+        make.top.equalTo(_numberView.mas_bottom).with.offset(1.0f);
         make.height.mas_equalTo(HEIGHT_LOGINCELL);
         make.width.equalTo(self.view);
     }];
@@ -184,8 +235,7 @@
         make.height.mas_equalTo(BUTTON_HEIGHT);
     }];
 }
-
-
+     
 #pragma mark - getters and setters
 
 @end

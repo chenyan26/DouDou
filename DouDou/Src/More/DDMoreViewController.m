@@ -10,8 +10,9 @@
 #import "DDMoreDefaultCell.h"
 #import "DDMoreImageCell.h"
 
-#import "DDHighlightViewController.h"
-#import "DDShareViewController.h"
+#import "DDAccountTool.h"
+#import "DDAccountAPIManager.h"
+#import "DDControllerTool.h"
 
 @interface DDMoreViewController ()
 
@@ -21,11 +22,6 @@ static const NSString *kImageCell = @"kImageCell";
 static const NSString *kDefaultCell = @"kDefaultCell";
 
 @implementation DDMoreViewController
-
-{
-    DDHighlightViewController *highlightVC;
-    DDShareViewController *shareVC;
-}
 
 #pragma mark - life cycle
 
@@ -66,9 +62,8 @@ static const NSString *kDefaultCell = @"kDefaultCell";
     
     if (indexPath.section == 0) {
         DDMoreImageCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kImageCell forIndexPath:indexPath];
-        [cell setWithLeftImage:[UIImage imageNamed:@"tx01"] andText:@"2355860263"];
-        
-// TODO 设置头像 和 number 靠 model
+
+        [cell setWithLeftImage:[UIImage imageNamed:@"tx01"] andText:[DDAccountTool account].number];
         
         [cell setTopLineStyle:CellLineStyleFill];
         [cell setBottomLineStyle:CellLineStyleFill];
@@ -78,11 +73,11 @@ static const NSString *kDefaultCell = @"kDefaultCell";
         DDMoreDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kDefaultCell forIndexPath:indexPath];
         if (indexPath.section == 1) {
             if (indexPath.row == 0) {
-                [cell setWithLeftImageName:@"tabbar_mainframe" andText:@"更多精彩"];
+                [cell setWithLeftImageName:@"tabbar_mainframe" andText:@"备份通讯录"];
                 [cell setTopLineStyle:CellLineStyleFill];
                 [cell setBottomLineStyle:CellLineStyleNone];
             } else {
-                [cell setWithLeftImageName:@"tabbar_discover" andText:@"分享给朋友"];
+                [cell setWithLeftImageName:@"tabbar_discover" andText:@"恢复通讯录"];
                 [cell setTopLineStyle:CellLineStyleDefault];
                 [cell setBottomLineStyle:CellLineStyleFill];
                 
@@ -122,16 +117,17 @@ static const NSString *kDefaultCell = @"kDefaultCell";
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            highlightVC = [[DDHighlightViewController alloc] init];
-            [self.navigationController pushViewController:highlightVC animated:YES];
+//            备份
         } else {
-            shareVC = [[DDShareViewController alloc] init];
-            [self.navigationController pushViewController:shareVC animated:YES];
+//            恢复
         }
     }else if (indexPath.section == 2) {
+        
+        __weak __typeof(self)weakSelf = self;
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"注销登录" message:@"确定注销登录" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             // TODO 注销登录的流程
+            [weakSelf signout];
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
         
@@ -142,5 +138,27 @@ static const NSString *kDefaultCell = @"kDefaultCell";
     }
 }
 
+#pragma mark - private methods
+
+- (void) signout
+{
+    MBProgressHUD *hud = [MBProgressHUD showMessage:@"正在注销"];
+    [DDAccountAPIManager signoutWithClient_id:[DDAccountTool account].client_id success:^(DDJsonResponse *resopnseObj) {
+        
+        // TODO 注销后跳转
+        [hud setHidden:YES];
+        if (! resopnseObj.errcode) {
+            
+            [DDAccountTool removeAccount];
+            
+            [DDControllerTool chooseRootViewController:RootControllerTypeLogin];
+        } else {
+            [MBProgressHUD showShortMessage:@"注销失败"];
+        }
+    } failure:^(NSError *error) {
+        [hud setHidden:YES];
+        [MBProgressHUD showShortMessage:@"注销失败"];
+    }];
+}
 
 @end

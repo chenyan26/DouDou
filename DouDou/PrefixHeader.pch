@@ -15,5 +15,6 @@
 
 #import "UIView+CY.h"
 #import "UIImage+CY.h"
+#import "MBProgressHUD+CY.h"
 
 #endif

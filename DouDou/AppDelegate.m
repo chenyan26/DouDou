@@ -12,6 +12,8 @@
 #import "DDLoginViewController.h"
 
 #import "DDRootViewController.h"
+#import "DDAccountTool.h"
+#import "DDControllerTool.h"
 
 @interface AppDelegate ()
 
@@ -23,18 +25,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
 //    DDLoginViewController *loginVC = [[DDLoginViewController alloc] init];
 //    DDNavigationViewController *loginRootVC = [[DDNavigationViewController alloc] initWithRootViewController:loginVC];
 //    [self.window setRootViewController:loginRootVC];
     
     
-    DDRootViewController *rootVC = [[DDRootViewController alloc] init];
-    [self.window setRootViewController:rootVC];
+//    DDRootViewController *rootVC = [[DDRootViewController alloc] init];
+//    [self.window setRootViewController:rootVC];
     
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    if ([DDAccountTool account]) {
+        //已经登录
+        [DDControllerTool chooseRootViewController:RootControllerTypeRoot];
+    } else {
+        [DDControllerTool chooseRootViewController:RootControllerTypeLogin];
+    }
+   
     return YES;
 }
 

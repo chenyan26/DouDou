@@ -11,13 +11,16 @@
 #import "DDForgetPwdViewController.h"
 #import "DDLoginCellView.h"
 #import <Masonry/Masonry.h>
-#import "MBProgressHUD+CY.h"
 
 #import "DDRootViewController.h"
+#import "DDAccountAPIManager.h"
+#import "DDAccount.h"
+#import "DDAccountTool.h"
+#import "DDControllerTool.h"
 
 @interface DDLoginViewController ()<UITextFieldDelegate>
 
-@property (nonatomic, weak) DDLoginCellView *phoneView;
+@property (nonatomic, weak) DDLoginCellView *numberView;
 @property (nonatomic, weak) DDLoginCellView *pwdView;
 
 @property (nonatomic, weak) UIButton *loginBtn;
@@ -35,7 +38,7 @@
     self.view.backgroundColor = DEFAULT_BACKGROUND_COLOR;
     
     DDLoginCellView *v1= [[DDLoginCellView alloc] init];
-    _phoneView = v1;
+    _numberView = v1;
     
     DDLoginCellView *v2= [[DDLoginCellView alloc] init];
     _pwdView = v2;
@@ -53,7 +56,7 @@
     _forgetPwdBtn = button2;
     [_forgetPwdBtn addTarget:self action:@selector(forgetPwdClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:_phoneView];
+    [self.view addSubview:_numberView];
     [self.view addSubview:_pwdView];
     [self.view addSubview:_loginBtn];
     [self.view addSubview:_registerBtn];
@@ -79,11 +82,40 @@
 }
 
 #pragma mark - UITextFieldDelegate
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(done:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer: tapGestureRecognizer];
+    return YES;
+}
+
+//开始编辑输入框的时候，软键盘出现，执行此事件
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    int offset = textField.superview.y + textField.superview.height + 5 - (self.view.height - 216.0);
+    if (offset > 0){
+        NSTimeInterval animationDuration = 0.30f;
+        [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        
+        self.view.frame = CGRectMake(0, -offset, self.view.width, self.view.height);
+        
+        [UIView commitAnimations];
+    }
+}
+
+//输入框编辑完成以后，将视图恢复到原始状态
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.frame =CGRectMake(0, 0, self.view.width, self.view.height);
 }
 
 #pragma mark - notifacation event
@@ -91,37 +123,48 @@
 - (void)textFieldWillChange:(id)sender
 {
     NSLog(@"textFieldWillChange");
-    if (_phoneView.textField.text.length > 0 && _pwdView.textField.text.length > 0) {
+    if (_numberView.textField.text.length > 0 && _pwdView.textField.text.length > 0) {
         [_loginBtn setEnabled:YES];
     } else {
         [_loginBtn setEnabled:NO];
     }
 }
 
-
-
 #pragma mark - event response
+
+-(void)done:(id)sender
+{
+    [_numberView.textField resignFirstResponder];
+    [_pwdView.textField resignFirstResponder];
+}
 
 - (void) loginClick:(id)sender
 {
-    //  TODO 封装MB
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    //就是dim的效果
-    [hud setBackgroundColor:DEFAULT_DIM_COLOR];
-    //所有 指示器 和 label 的颜色
-    [hud setContentColor:[UIColor blackColor]];
-    [hud.label setFont:[UIFont systemFontOfSize:14.0f]];
-    [hud.label setText:@"正在连接服务器"];
-
-    //    TODO 登录不在此跳转
+    MBProgressHUD *hud = [MBProgressHUD showMessage:@"正在连接服务器"];
     
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 10000 * NSEC_PER_MSEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^{
-        [UIApplication sharedApplication].keyWindow.rootViewController = [[DDRootViewController alloc] init];
+    // 拿到 account来做判断－登录
+    DDAccount *account = [DDAccountTool account];
+    
+    if (account == nil) {
+        account = [[DDAccount alloc] init];
+        account.number = _numberView.textField.text;
+        account.password = _pwdView.textField.text;
+    }
+    
+    [DDAccountAPIManager signinWithAccount:account success:^(DDJsonResponse *resopnseObj) {
         [hud setHidden:YES];
-    });
-
+        if (! resopnseObj.errcode) {
+            
+            [DDAccountTool save:account];
+            [DDControllerTool chooseRootViewController:RootControllerTypeRoot];
+        } else {
+            [hud setHidden:YES];
+            [MBProgressHUD showShortMessage:@"登录失败，请重试"];
+        }
+    } failure:^(NSError *error) {
+        [hud setHidden:YES];
+        [MBProgressHUD showShortMessage:@"登录失败，请重试"];
+    }];
 }
 
 - (void) registerClick:(id)sender
@@ -139,21 +182,21 @@
 - (void) setupSubviews {
     
     //手机号
-    [_phoneView.textField setKeyboardType:UIKeyboardTypePhonePad];
+    [_numberView.textField setKeyboardType:UIKeyboardTypeNumberPad];
     
-    [_phoneView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_numberView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.mas_equalTo(MARGIN_CELL + 64);
         make.height.mas_equalTo(HEIGHT_LOGINCELL);
         make.width.equalTo(self.view);
     }];
 
-    [_phoneView setWithImageName:@"tabbar_me" andText:@"请输入手机号码"];
+    [_numberView setWithImageName:@"tabbar_me" andText:@"请输入手机号码"];
     
     //密码
     [_pwdView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.equalTo(_phoneView.mas_bottom).with.offset(1.0f);
+        make.top.equalTo(_numberView.mas_bottom).with.offset(1.0f);
         make.height.mas_equalTo(HEIGHT_LOGINCELL);
         make.width.equalTo(self.view);
     }];

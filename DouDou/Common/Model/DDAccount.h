@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DDAccount : NSObject
+@interface DDAccount : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *number;
 
-@property (nonatomic, copy) NSString *pwd;
+@property (nonatomic, copy) NSString *password;
+
+/**
+ *  设备ID＝UUID
+ */
+@property (nonatomic, copy) NSString *client_id;
+
+//@property (nonatomic, copy) NSString *sipId;
 
 @end
