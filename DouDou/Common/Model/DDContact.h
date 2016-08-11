@@ -10,8 +10,14 @@
 
 @interface DDContact : NSObject
 
+@property (nonatomic, assign) NSInteger Id;
+
 @property (nonatomic, copy) NSString *number;
 
 @property (nonatomic, copy) NSString *nickname;
 
+@property (nonatomic, copy) NSString *pinyin;
+@property (nonatomic, copy) NSString *initial;
+
 @end
+ 

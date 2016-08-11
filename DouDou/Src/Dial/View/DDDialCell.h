@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) DDCallRecord *callRecord;
 
+@property (nonatomic, assign) NSInteger row;
+
 @property (nonatomic, weak) id<DDDialCellDelegate> delegate;
 
 @end

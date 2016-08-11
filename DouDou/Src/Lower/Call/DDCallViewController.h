@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class DDContact;
+
 @interface DDCallViewController : UIViewController
+
+- (instancetype)initWithContact:(DDContact *)contact;
 
 @end

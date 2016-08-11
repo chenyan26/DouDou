@@ -7,10 +7,10 @@
 //
 
 #import "DDJsonResponse.h"
-#import "DDAccount.h"
+#import "DDContact.h"
 
 @interface DDContactsResponse : DDJsonResponse
 
-@property (nonatomic, strong) NSArray<DDAccount *> *contacts;
+@property (nonatomic, strong) NSArray<DDContact *> *contacts;
 
 @end

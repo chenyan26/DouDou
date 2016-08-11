@@ -14,7 +14,6 @@
 #import "DDDialViewController.h"
 #import "DDMoreViewController.h"
 
-
 @interface DDRootViewController ()
 
 @property (nonatomic, strong) DDContactsViewController *contactsVC;

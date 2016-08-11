@@ -7,8 +7,12 @@
 //
 
 #import "DDBaseAPIManager.h"
-#import "DDCodeResponse.h"
+
 #import "DDAccount.h"
+
+#import "DDCodeResponse.h"
+#import "DDNumberResponse.h"
+#import "DDClientIdResponse.h"
 
 @interface DDAccountAPIManager : DDBaseAPIManager
 
@@ -32,6 +36,14 @@
  *  注销登录
  */
 + (void)signoutWithClient_id:(NSString *)client_id success:(void (^)(DDJsonResponse *resopnseObj))success failure:(void (^)(NSError *error))failure;
+/**
+ *  根据 number 获取 client_id
+ */
++ (void)getClientIdWithNumber:(NSString *)number success:(void (^)(DDClientIdResponse *resopnseObj))success failure:(void (^)(NSError *error))failure;
+/**
+ *  根据 client_id 获取 number
+ */
++ (void)getNumberWithClientId:(NSString *)client_id success:(void (^)(DDNumberResponse *resopnseObj))success failure:(void (^)(NSError *error))failure;
 
 
 @end

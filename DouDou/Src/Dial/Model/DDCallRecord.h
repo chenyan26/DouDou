@@ -28,11 +28,14 @@ typedef NS_ENUM(NSInteger, CallRecordType) {
 
 @interface DDCallRecord : NSObject
 
-@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, assign) NSInteger Id;
 
 @property (nonatomic, copy) NSString *number;
 
-@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *nickname;
+
+@property (nonatomic, strong) NSDate *time;
 
 @property (nonatomic, assign) CallRecordType callRecordType;
 

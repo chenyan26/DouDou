@@ -16,8 +16,11 @@
 		5F05AECE1D49A30300FF8495 /* UIView+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05AECD1D49A30200FF8495 /* UIView+CY.m */; };
 		5F05AED11D49A5FC00FF8495 /* DDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05AED01D49A5FC00FF8495 /* DDRootViewController.m */; };
 		5F05AEF01D49B3DB00FF8495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F05AEEF1D49B3DB00FF8495 /* Images.xcassets */; };
-		5F05AEF41D49C92200FF8495 /* DDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05AEF21D49C92200FF8495 /* DDTestViewController.m */; };
-		5F05AEF51D49C92200FF8495 /* DDTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F05AEF31D49C92200FF8495 /* DDTestViewController.xib */; };
+		5F1708421D59B7CB00FC5250 /* DDBaseDBHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1708411D59B7CB00FC5250 /* DDBaseDBHandle.m */; };
+		5F1708451D59B8F500FC5250 /* DDBaseDBHandle+Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1708441D59B8F500FC5250 /* DDBaseDBHandle+Contact.m */; };
+		5F1708481D59C42B00FC5250 /* DDDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1708471D59C42B00FC5250 /* DDDetailCell.m */; };
+		5F17084B1D59CE0D00FC5250 /* DDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F17084A1D59CE0D00FC5250 /* DDDetailViewController.m */; };
+		5F1708511D59D8CA00FC5250 /* DDEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1708501D59D8CA00FC5250 /* DDEditViewController.m */; };
 		5F5901A91D4AFEEB009F7DFA /* DDLoginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901A81D4AFEEB009F7DFA /* DDLoginCellView.m */; };
 		5F5901B11D4AFF47009F7DFA /* DDForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901AD1D4AFF47009F7DFA /* DDForgetPwdViewController.m */; };
 		5F5901B91D4B06DE009F7DFA /* DDRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5901B81D4B06DE009F7DFA /* DDRegisterViewController.m */; };
@@ -39,20 +42,22 @@
 		5F5902001D4B5D3D009F7DFA /* tx01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901FD1D4B5D3D009F7DFA /* tx01.png */; };
 		5F5902011D4B5D3D009F7DFA /* tx01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901FE1D4B5D3D009F7DFA /* tx01@2x.png */; };
 		5F5902021D4B5D3D009F7DFA /* tx01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901FF1D4B5D3D009F7DFA /* tx01@3x.png */; };
-		5F5902051D4B9B74009F7DFA /* MBProgressHUD+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902041D4B9B74009F7DFA /* MBProgressHUD+CY.m */; };
 		5F59022C1D4EEFA4009F7DFA /* DDContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59022B1D4EEFA4009F7DFA /* DDContactsCell.m */; };
 		5F59022F1D503A01009F7DFA /* DDContactsSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59022E1D503A01009F7DFA /* DDContactsSearchViewController.m */; };
 		5F5902391D504DE8009F7DFA /* DDContactsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902381D504DE8009F7DFA /* DDContactsHeadView.m */; };
 		5F59023F1D506193009F7DFA /* DDAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59023E1D506193009F7DFA /* DDAddContactViewController.m */; };
 		5F5902421D507CF1009F7DFA /* DDLabelCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902411D507CF1009F7DFA /* DDLabelCellView.m */; };
 		5F5902451D508D4C009F7DFA /* DDImageCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902441D508D4C009F7DFA /* DDImageCellView.m */; };
-		5F59024B1D50D470009F7DFA /* DDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59024A1D50D470009F7DFA /* DDDetailViewController.m */; };
 		5F5902511D50D6F0009F7DFA /* DDDialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902501D50D6F0009F7DFA /* DDDialCell.m */; };
 		5F5902541D50D9AF009F7DFA /* DDCallRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902531D50D9AF009F7DFA /* DDCallRecord.m */; };
 		5F5902571D50DB05009F7DFA /* DDContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902561D50DB05009F7DFA /* DDContact.m */; };
 		5F59025A1D50DEBC009F7DFA /* DDDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902591D50DEBC009F7DFA /* DDDialViewController.m */; };
 		5F5902631D518E51009F7DFA /* DDCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902621D518E51009F7DFA /* DDCallViewController.m */; };
 		5F5902661D51A166009F7DFA /* DDDialBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5902651D51A166009F7DFA /* DDDialBoardView.m */; };
+		5F675BAA1D5B019E00C4C9A6 /* DDContactsDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F675BA91D5B019E00C4C9A6 /* DDContactsDataHelper.m */; };
+		5F675BB01D5B02D800C4C9A6 /* NSString+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F675BAF1D5B02D800C4C9A6 /* NSString+CY.m */; };
+		5F675BB61D5B0F2000C4C9A6 /* DDBaseDBHandle+CallRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F675BB51D5B0F2000C4C9A6 /* DDBaseDBHandle+CallRecord.m */; };
+		5F675BB91D5B2B0F00C4C9A6 /* NSDate+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F675BB81D5B2B0F00C4C9A6 /* NSDate+CY.m */; };
 		5F98D6EB1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */; };
 		5F98D7001D53252F00AED0ED /* DDAccountAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D6FF1D53252F00AED0ED /* DDAccountAPIManager.m */; };
 		5F98D7031D53264900AED0ED /* DDContactsAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7021D53264900AED0ED /* DDContactsAPIManager.m */; };
@@ -62,6 +67,9 @@
 		5F98D7251D54349B00AED0ED /* DDCodeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7241D54349B00AED0ED /* DDCodeResponse.m */; };
 		5F98D7281D546D8C00AED0ED /* MBProgressHUD+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7271D546D8C00AED0ED /* MBProgressHUD+CY.m */; };
 		5F98D7311D5482C000AED0ED /* DDControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7301D5482C000AED0ED /* DDControllerTool.m */; };
+		5F98D7401D5863CA00AED0ED /* DDClientIdResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D73F1D5863CA00AED0ED /* DDClientIdResponse.m */; };
+		5F98D7431D5863E500AED0ED /* DDNumberResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7421D5863E500AED0ED /* DDNumberResponse.m */; };
+		5F98D7461D58680100AED0ED /* DDContactsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98D7451D58680100AED0ED /* DDContactsResponse.m */; };
 		81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */; };
 		F69A7A736F444C16E65185F4 /* Pods_DouDou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7297474A5DBB664413A96E8B /* Pods_DouDou.framework */; };
 /* End PBXBuildFile section */
@@ -98,9 +106,16 @@
 		5F05AEE51D49A8D200FF8495 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5F05AEE61D49A95700FF8495 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		5F05AEEF1D49B3DB00FF8495 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resource/Images.xcassets; sourceTree = "<group>"; };
-		5F05AEF11D49C92200FF8495 /* DDTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTestViewController.h; sourceTree = "<group>"; };
-		5F05AEF21D49C92200FF8495 /* DDTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTestViewController.m; sourceTree = "<group>"; };
-		5F05AEF31D49C92200FF8495 /* DDTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDTestViewController.xib; sourceTree = "<group>"; };
+		5F1708401D59B7CB00FC5250 /* DDBaseDBHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBaseDBHandle.h; sourceTree = "<group>"; };
+		5F1708411D59B7CB00FC5250 /* DDBaseDBHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBaseDBHandle.m; sourceTree = "<group>"; };
+		5F1708431D59B8F500FC5250 /* DDBaseDBHandle+Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDBaseDBHandle+Contact.h"; sourceTree = "<group>"; };
+		5F1708441D59B8F500FC5250 /* DDBaseDBHandle+Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDBaseDBHandle+Contact.m"; sourceTree = "<group>"; };
+		5F1708461D59C42B00FC5250 /* DDDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDetailCell.h; sourceTree = "<group>"; };
+		5F1708471D59C42B00FC5250 /* DDDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDetailCell.m; sourceTree = "<group>"; };
+		5F1708491D59CE0D00FC5250 /* DDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDetailViewController.h; sourceTree = "<group>"; };
+		5F17084A1D59CE0D00FC5250 /* DDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDetailViewController.m; sourceTree = "<group>"; };
+		5F17084F1D59D8CA00FC5250 /* DDEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEditViewController.h; sourceTree = "<group>"; };
+		5F1708501D59D8CA00FC5250 /* DDEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEditViewController.m; sourceTree = "<group>"; };
 		5F5901A71D4AFEEB009F7DFA /* DDLoginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLoginCellView.h; sourceTree = "<group>"; };
 		5F5901A81D4AFEEB009F7DFA /* DDLoginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLoginCellView.m; sourceTree = "<group>"; };
 		5F5901AC1D4AFF47009F7DFA /* DDForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDForgetPwdViewController.h; sourceTree = "<group>"; };
@@ -134,8 +149,6 @@
 		5F5901FD1D4B5D3D009F7DFA /* tx01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tx01.png; path = Resource/tx01.png; sourceTree = "<group>"; };
 		5F5901FE1D4B5D3D009F7DFA /* tx01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tx01@2x.png"; path = "Resource/tx01@2x.png"; sourceTree = "<group>"; };
 		5F5901FF1D4B5D3D009F7DFA /* tx01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tx01@3x.png"; path = "Resource/tx01@3x.png"; sourceTree = "<group>"; };
-		5F5902031D4B9B74009F7DFA /* MBProgressHUD+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CY.h"; sourceTree = "<group>"; };
-		5F5902041D4B9B74009F7DFA /* MBProgressHUD+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CY.m"; sourceTree = "<group>"; };
 		5F59022A1D4EEFA4009F7DFA /* DDContactsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsCell.h; sourceTree = "<group>"; };
 		5F59022B1D4EEFA4009F7DFA /* DDContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsCell.m; sourceTree = "<group>"; };
 		5F59022D1D503A01009F7DFA /* DDContactsSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsSearchViewController.h; sourceTree = "<group>"; };
@@ -148,8 +161,6 @@
 		5F5902411D507CF1009F7DFA /* DDLabelCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLabelCellView.m; sourceTree = "<group>"; };
 		5F5902431D508D4C009F7DFA /* DDImageCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImageCellView.h; sourceTree = "<group>"; };
 		5F5902441D508D4C009F7DFA /* DDImageCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImageCellView.m; sourceTree = "<group>"; };
-		5F5902491D50D470009F7DFA /* DDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDetailViewController.h; sourceTree = "<group>"; };
-		5F59024A1D50D470009F7DFA /* DDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDetailViewController.m; sourceTree = "<group>"; };
 		5F59024F1D50D6F0009F7DFA /* DDDialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDialCell.h; sourceTree = "<group>"; };
 		5F5902501D50D6F0009F7DFA /* DDDialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDialCell.m; sourceTree = "<group>"; };
 		5F5902521D50D9AF009F7DFA /* DDCallRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCallRecord.h; sourceTree = "<group>"; };
@@ -162,6 +173,14 @@
 		5F5902621D518E51009F7DFA /* DDCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCallViewController.m; sourceTree = "<group>"; };
 		5F5902641D51A166009F7DFA /* DDDialBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDialBoardView.h; sourceTree = "<group>"; };
 		5F5902651D51A166009F7DFA /* DDDialBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDialBoardView.m; sourceTree = "<group>"; };
+		5F675BA81D5B019E00C4C9A6 /* DDContactsDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsDataHelper.h; sourceTree = "<group>"; };
+		5F675BA91D5B019E00C4C9A6 /* DDContactsDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsDataHelper.m; sourceTree = "<group>"; };
+		5F675BAE1D5B02D800C4C9A6 /* NSString+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CY.h"; sourceTree = "<group>"; };
+		5F675BAF1D5B02D800C4C9A6 /* NSString+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CY.m"; sourceTree = "<group>"; };
+		5F675BB41D5B0F2000C4C9A6 /* DDBaseDBHandle+CallRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDBaseDBHandle+CallRecord.h"; sourceTree = "<group>"; };
+		5F675BB51D5B0F2000C4C9A6 /* DDBaseDBHandle+CallRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDBaseDBHandle+CallRecord.m"; sourceTree = "<group>"; };
+		5F675BB71D5B2B0F00C4C9A6 /* NSDate+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CY.h"; sourceTree = "<group>"; };
+		5F675BB81D5B2B0F00C4C9A6 /* NSDate+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CY.m"; sourceTree = "<group>"; };
 		5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteEmoticonBtn@2x.png"; path = "Resource/DeleteEmoticonBtn@2x.png"; sourceTree = "<group>"; };
 		5F98D6FE1D53252F00AED0ED /* DDAccountAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDAccountAPIManager.h; path = DouDou/Common/APIManager/DDAccountAPIManager.h; sourceTree = SOURCE_ROOT; };
 		5F98D6FF1D53252F00AED0ED /* DDAccountAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDAccountAPIManager.m; path = DouDou/Common/APIManager/DDAccountAPIManager.m; sourceTree = SOURCE_ROOT; };
@@ -179,6 +198,12 @@
 		5F98D7271D546D8C00AED0ED /* MBProgressHUD+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CY.m"; sourceTree = "<group>"; };
 		5F98D72F1D5482C000AED0ED /* DDControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDControllerTool.h; sourceTree = "<group>"; };
 		5F98D7301D5482C000AED0ED /* DDControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDControllerTool.m; sourceTree = "<group>"; };
+		5F98D73E1D5863CA00AED0ED /* DDClientIdResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDClientIdResponse.h; sourceTree = "<group>"; };
+		5F98D73F1D5863CA00AED0ED /* DDClientIdResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDClientIdResponse.m; sourceTree = "<group>"; };
+		5F98D7411D5863E500AED0ED /* DDNumberResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumberResponse.h; sourceTree = "<group>"; };
+		5F98D7421D5863E500AED0ED /* DDNumberResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNumberResponse.m; sourceTree = "<group>"; };
+		5F98D7441D58680100AED0ED /* DDContactsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsResponse.h; sourceTree = "<group>"; };
+		5F98D7451D58680100AED0ED /* DDContactsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsResponse.m; sourceTree = "<group>"; };
 		7297474A5DBB664413A96E8B /* Pods_DouDou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531A7B4D137B48EF58A06AE /* Pods-DouDouTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDouTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -296,6 +321,7 @@
 				5F5901CD1D4B0FBC009F7DFA /* DDContactsViewController.m */,
 				5F59022D1D503A01009F7DFA /* DDContactsSearchViewController.h */,
 				5F59022E1D503A01009F7DFA /* DDContactsSearchViewController.m */,
+				5F675BA71D5B018F00C4C9A6 /* Tool */,
 				5F05AEB51D499FB700FF8495 /* Model */,
 				5F05AEB61D499FB700FF8495 /* View */,
 			);
@@ -416,6 +442,10 @@
 		5F05AEC51D499FD700FF8495 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5F675BAE1D5B02D800C4C9A6 /* NSString+CY.h */,
+				5F675BAF1D5B02D800C4C9A6 /* NSString+CY.m */,
+				5F675BB71D5B2B0F00C4C9A6 /* NSDate+CY.h */,
+				5F675BB81D5B2B0F00C4C9A6 /* NSDate+CY.m */,
 				5F05AECC1D49A30200FF8495 /* UIView+CY.h */,
 				5F05AECD1D49A30200FF8495 /* UIView+CY.m */,
 				5F05AEC91D49A04B00FF8495 /* UIImage+CY.h */,
@@ -429,6 +459,12 @@
 		5F05AEC61D499FD700FF8495 /* DBHelper */ = {
 			isa = PBXGroup;
 			children = (
+				5F1708401D59B7CB00FC5250 /* DDBaseDBHandle.h */,
+				5F1708411D59B7CB00FC5250 /* DDBaseDBHandle.m */,
+				5F1708431D59B8F500FC5250 /* DDBaseDBHandle+Contact.h */,
+				5F1708441D59B8F500FC5250 /* DDBaseDBHandle+Contact.m */,
+				5F675BB41D5B0F2000C4C9A6 /* DDBaseDBHandle+CallRecord.h */,
+				5F675BB51D5B0F2000C4C9A6 /* DDBaseDBHandle+CallRecord.m */,
 			);
 			path = DBHelper;
 			sourceTree = "<group>";
@@ -436,8 +472,6 @@
 		5F05AEC71D499FD700FF8495 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				5F5902031D4B9B74009F7DFA /* MBProgressHUD+CY.h */,
-				5F5902041D4B9B74009F7DFA /* MBProgressHUD+CY.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -456,21 +490,35 @@
 			children = (
 				5F5901AB1D4AFF47009F7DFA /* Controller */,
 				5F5901A61D4AFEEB009F7DFA /* View */,
-				5F5901A51D4AFE9C009F7DFA /* test */,
 				5F5901AA1D4AFEF9009F7DFA /* Model */,
 			);
 			name = "Login----------------------";
 			path = Login;
 			sourceTree = "<group>";
 		};
-		5F5901A51D4AFE9C009F7DFA /* test */ = {
+		5F17084C1D59D87F00FC5250 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				5F05AEF11D49C92200FF8495 /* DDTestViewController.h */,
-				5F05AEF21D49C92200FF8495 /* DDTestViewController.m */,
-				5F05AEF31D49C92200FF8495 /* DDTestViewController.xib */,
+				5F17084F1D59D8CA00FC5250 /* DDEditViewController.h */,
+				5F1708501D59D8CA00FC5250 /* DDEditViewController.m */,
+				5F17084D1D59D87F00FC5250 /* Model */,
+				5F17084E1D59D87F00FC5250 /* View */,
 			);
-			name = test;
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		5F17084D1D59D87F00FC5250 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F17084E1D59D87F00FC5250 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5F5901A61D4AFEEB009F7DFA /* View */ = {
@@ -550,6 +598,7 @@
 				5F59020A1D4EDC88009F7DFA /* ContactBook */,
 				5F59025E1D518E1F009F7DFA /* Call */,
 				5F59020D1D4EDC88009F7DFA /* Detail */,
+				5F17084C1D59D87F00FC5250 /* Edit */,
 			);
 			name = "Lower----------------------";
 			path = Lower;
@@ -610,8 +659,8 @@
 		5F59020D1D4EDC88009F7DFA /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				5F5902491D50D470009F7DFA /* DDDetailViewController.h */,
-				5F59024A1D50D470009F7DFA /* DDDetailViewController.m */,
+				5F1708491D59CE0D00FC5250 /* DDDetailViewController.h */,
+				5F17084A1D59CE0D00FC5250 /* DDDetailViewController.m */,
 				5F59020E1D4EDC88009F7DFA /* Model */,
 				5F59020F1D4EDC88009F7DFA /* View */,
 			);
@@ -628,6 +677,8 @@
 		5F59020F1D4EDC88009F7DFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F1708461D59C42B00FC5250 /* DDDetailCell.h */,
+				5F1708471D59C42B00FC5250 /* DDDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -657,6 +708,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5F675BA71D5B018F00C4C9A6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5F675BA81D5B019E00C4C9A6 /* DDContactsDataHelper.h */,
+				5F675BA91D5B019E00C4C9A6 /* DDContactsDataHelper.m */,
+			);
+			name = Tool;
+			path = DouDou/Src/Dial/Tool;
+			sourceTree = SOURCE_ROOT;
+		};
 		5F98D7101D542F2000AED0ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +725,12 @@
 				5F98D7211D54345200AED0ED /* DDJsonResponse.m */,
 				5F98D7231D54349B00AED0ED /* DDCodeResponse.h */,
 				5F98D7241D54349B00AED0ED /* DDCodeResponse.m */,
+				5F98D73E1D5863CA00AED0ED /* DDClientIdResponse.h */,
+				5F98D73F1D5863CA00AED0ED /* DDClientIdResponse.m */,
+				5F98D7411D5863E500AED0ED /* DDNumberResponse.h */,
+				5F98D7421D5863E500AED0ED /* DDNumberResponse.m */,
+				5F98D7441D58680100AED0ED /* DDContactsResponse.h */,
+				5F98D7451D58680100AED0ED /* DDContactsResponse.m */,
 			);
 			name = Model;
 			path = DouDou/Common/APIManager/Model;
@@ -774,7 +841,6 @@
 				5F05AEF01D49B3DB00FF8495 /* Images.xcassets in Resources */,
 				5F5902011D4B5D3D009F7DFA /* tx01@2x.png in Resources */,
 				5F5901EF1D4B510F009F7DFA /* right_icon.png in Resources */,
-				5F05AEF51D49C92200FF8495 /* DDTestViewController.xib in Resources */,
 				5F5901BE1D4B0B00009F7DFA /* return_button.png in Resources */,
 				5F5901C01D4B0B00009F7DFA /* return_button@3x.png in Resources */,
 				5F05AE8E1D48F70E00FF8495 /* Assets.xcassets in Resources */,
@@ -889,19 +955,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F675BB61D5B0F2000C4C9A6 /* DDBaseDBHandle+CallRecord.m in Sources */,
+				5F98D7401D5863CA00AED0ED /* DDClientIdResponse.m in Sources */,
 				5F5902541D50D9AF009F7DFA /* DDCallRecord.m in Sources */,
-				5F05AEF41D49C92200FF8495 /* DDTestViewController.m in Sources */,
-				5F5902051D4B9B74009F7DFA /* MBProgressHUD+CY.m in Sources */,
+				5F1708511D59D8CA00FC5250 /* DDEditViewController.m in Sources */,
+				5F675BB91D5B2B0F00C4C9A6 /* NSDate+CY.m in Sources */,
 				5F98D7091D532B0600AED0ED /* DDBaseAPIManager.m in Sources */,
 				5F98D7251D54349B00AED0ED /* DDCodeResponse.m in Sources */,
 				5F59023F1D506193009F7DFA /* DDAddContactViewController.m in Sources */,
+				5F675BB01D5B02D800C4C9A6 /* NSString+CY.m in Sources */,
 				5F5901E21D4B45DB009F7DFA /* DDMoreDefaultCell.m in Sources */,
 				5F5901CE1D4B0FBC009F7DFA /* DDContactsViewController.m in Sources */,
 				5F5902391D504DE8009F7DFA /* DDContactsHeadView.m in Sources */,
 				5F05AED11D49A5FC00FF8495 /* DDRootViewController.m in Sources */,
 				5F5902511D50D6F0009F7DFA /* DDDialCell.m in Sources */,
 				5F98D7221D54345200AED0ED /* DDJsonResponse.m in Sources */,
+				5F1708451D59B8F500FC5250 /* DDBaseDBHandle+Contact.m in Sources */,
 				5F98D7031D53264900AED0ED /* DDContactsAPIManager.m in Sources */,
+				5F98D7431D5863E500AED0ED /* DDNumberResponse.m in Sources */,
 				5F5901D41D4B137A009F7DFA /* DDLoginViewController.m in Sources */,
 				5F5902421D507CF1009F7DFA /* DDLabelCellView.m in Sources */,
 				5F5901B91D4B06DE009F7DFA /* DDRegisterViewController.m in Sources */,
@@ -913,11 +984,15 @@
 				5F98D7061D532A4600AED0ED /* CYHTTPTool.m in Sources */,
 				5F05AE8C1D48F70E00FF8495 /* AppDelegate.m in Sources */,
 				5F98D7311D5482C000AED0ED /* DDControllerTool.m in Sources */,
+				5F17084B1D59CE0D00FC5250 /* DDDetailViewController.m in Sources */,
 				5F05AECE1D49A30300FF8495 /* UIView+CY.m in Sources */,
 				5F59025A1D50DEBC009F7DFA /* DDDialViewController.m in Sources */,
+				5F675BAA1D5B019E00C4C9A6 /* DDContactsDataHelper.m in Sources */,
+				5F1708421D59B7CB00FC5250 /* DDBaseDBHandle.m in Sources */,
 				5F59022F1D503A01009F7DFA /* DDContactsSearchViewController.m in Sources */,
 				5F5901D11D4B0FDD009F7DFA /* DDMoreViewController.m in Sources */,
 				5F05AE891D48F70D00FF8495 /* main.m in Sources */,
+				5F98D7461D58680100AED0ED /* DDContactsResponse.m in Sources */,
 				5F5901DC1D4B2DED009F7DFA /* DDAccount.m in Sources */,
 				5F5901A91D4AFEEB009F7DFA /* DDLoginCellView.m in Sources */,
 				5F5901E51D4B4BBE009F7DFA /* DDCommonTableViewCell.m in Sources */,
@@ -925,9 +1000,9 @@
 				5F5902571D50DB05009F7DFA /* DDContact.m in Sources */,
 				5F5902451D508D4C009F7DFA /* DDImageCellView.m in Sources */,
 				5F5901C51D4B0CD1009F7DFA /* DDNavigationViewController.m in Sources */,
-				5F59024B1D50D470009F7DFA /* DDDetailViewController.m in Sources */,
 				5F5901B11D4AFF47009F7DFA /* DDForgetPwdViewController.m in Sources */,
 				5F5901D81D4B2D6D009F7DFA /* DDAccountTool.m in Sources */,
+				5F1708481D59C42B00FC5250 /* DDDetailCell.m in Sources */,
 				5F5902631D518E51009F7DFA /* DDCallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

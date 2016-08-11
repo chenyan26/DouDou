@@ -13,8 +13,13 @@
 #import "DDAccountTool.h"
 #import "DDAccountAPIManager.h"
 #import "DDControllerTool.h"
+#import "DDContactsAPIManager.h"
+#import "DDBaseDBHandle+Contact.h"
+#import "MJExtension.h"
 
 @interface DDMoreViewController ()
+
+@property (nonatomic, strong) DDAccount *account;
 
 @end
 
@@ -22,6 +27,9 @@ static const NSString *kImageCell = @"kImageCell";
 static const NSString *kDefaultCell = @"kDefaultCell";
 
 @implementation DDMoreViewController
+{
+    DDBaseDBHandle *handle;
+}
 
 #pragma mark - life cycle
 
@@ -63,7 +71,7 @@ static const NSString *kDefaultCell = @"kDefaultCell";
     if (indexPath.section == 0) {
         DDMoreImageCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kImageCell forIndexPath:indexPath];
 
-        [cell setWithLeftImage:[UIImage imageNamed:@"tx01"] andText:[DDAccountTool account].number];
+        [cell setWithLeftImage:[UIImage imageNamed:@"tx01"] andText:self.account.number];
         
         [cell setTopLineStyle:CellLineStyleFill];
         [cell setBottomLineStyle:CellLineStyleFill];
@@ -113,20 +121,47 @@ static const NSString *kDefaultCell = @"kDefaultCell";
     
 }
 
+#pragma mark - table view delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
 //            备份
+            handle = [DDBaseDBHandle shareDataBaseHandle];
+            NSMutableArray *contacts = [handle selectAllContactFromContactTable];
+            
+            [DDContactsAPIManager putContacts:contacts success:^(DDJsonResponse *resopnseObj) {
+                if (resopnseObj.errcode == OK) {
+                    [MBProgressHUD showShortMessage:@"备份成功"];
+                } else {
+                    [MBProgressHUD showShortMessage:@"备份失败，请检查网络"];
+                }
+            } failure:^(NSError *error) {
+                [MBProgressHUD showShortMessage:@"备份失败，请检查网络"];
+            }];
         } else {
 //            恢复
+            [DDContactsAPIManager getContactsSuccess:^(DDContactsResponse *resopnseObj) {
+                if (!resopnseObj.errcode) {
+                    handle = [DDBaseDBHandle shareDataBaseHandle];
+                    NSArray<DDContact *> *arr = [DDContact mj_objectArrayWithKeyValuesArray:resopnseObj.contacts];
+                    [handle replaceAllContacts:arr];
+                    [MBProgressHUD showShortMessage:@"恢复成功"];
+                } else {
+                    [MBProgressHUD showShortMessage:@"恢复失败，请检查网络"];
+                }
+                
+            } failure:^(NSError *error) {
+                [MBProgressHUD showShortMessage:@"恢复失败，请检查网络"];
+            }];
         }
     }else if (indexPath.section == 2) {
         
         __weak __typeof(self)weakSelf = self;
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"注销登录" message:@"确定注销登录" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            // TODO 注销登录的流程
+            
             [weakSelf signout];
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
@@ -143,11 +178,10 @@ static const NSString *kDefaultCell = @"kDefaultCell";
 - (void) signout
 {
     MBProgressHUD *hud = [MBProgressHUD showMessage:@"正在注销"];
-    [DDAccountAPIManager signoutWithClient_id:[DDAccountTool account].client_id success:^(DDJsonResponse *resopnseObj) {
+    [DDAccountAPIManager signoutWithClient_id:self.account.client_id success:^(DDJsonResponse *resopnseObj) {
         
-        // TODO 注销后跳转
         [hud setHidden:YES];
-        if (! resopnseObj.errcode) {
+        if (resopnseObj.errcode == OK) {
             
             [DDAccountTool removeAccount];
             
@@ -159,6 +193,16 @@ static const NSString *kDefaultCell = @"kDefaultCell";
         [hud setHidden:YES];
         [MBProgressHUD showShortMessage:@"注销失败"];
     }];
+}
+
+#pragma mark - setter and getter
+
+- (DDAccount *)account
+{
+    if (_account == nil) {
+        _account = [DDAccountTool account];
+    }
+    return _account;
 }
 
 @end

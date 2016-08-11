@@ -14,6 +14,7 @@
 #import "DDRootViewController.h"
 #import "DDAccountTool.h"
 #import "DDControllerTool.h"
+#import "DDAccountAPIManager.h"
 
 @interface AppDelegate ()
 
@@ -36,13 +37,27 @@
 //    DDRootViewController *rootVC = [[DDRootViewController alloc] init];
 //    [self.window setRootViewController:rootVC];
     
-    if ([DDAccountTool account]) {
-        //已经登录
+    DDAccount *account = [DDAccountTool account];
+    if (account) {
+        //已经有帐号
+        //需要登录
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@0 forKey:LOGIN_STATE_KEY];
+        [defaults synchronize];
+        
+        [DDAccountAPIManager signinWithAccount:account success:^(DDJsonResponse *resopnseObj) {
+            //进入主界面
+            if (resopnseObj.errcode == OK) {
+                [defaults setObject:@1 forKey:LOGIN_STATE_KEY];
+                [defaults synchronize];
+            }
+        } failure:^(NSError *error) {
+        }];
         [DDControllerTool chooseRootViewController:RootControllerTypeRoot];
     } else {
         [DDControllerTool chooseRootViewController:RootControllerTypeLogin];
     }
-   
+    
     return YES;
 }
 

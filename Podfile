@@ -11,6 +11,7 @@ target 'DouDou' do
   pod 'MJExtension'
   pod 'FMDB'
   pod 'MBProgressHUD'
+  pod 'PINCache'
 
   target 'DouDouTests' do
     inherit! :search_paths

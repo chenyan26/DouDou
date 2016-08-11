@@ -10,4 +10,11 @@
 
 @implementation DDContact
 
+- (void)setNickname:(NSString *)nickname
+{
+    _nickname = nickname;
+    _pinyin = nickname.pinyin;
+    _initial = nickname.pinyinInitial;
+}
+
 @end

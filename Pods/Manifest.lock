@@ -20,6 +20,7 @@ PODS:
   - Masonry (1.0.1)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
+  - PINCache (2.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJExtension
+  - PINCache
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -34,7 +36,8 @@ SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
 
-PODFILE CHECKSUM: 120830b3376763f138ad4b10b5440c35f50b0f9a
+PODFILE CHECKSUM: 418541d96e1d02160cea4ec84b18f0402a74db1e
 
 COCOAPODS: 1.0.1

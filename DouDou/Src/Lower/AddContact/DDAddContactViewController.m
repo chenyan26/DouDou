@@ -11,7 +11,12 @@
 #import "DDLabelCellView.h"
 #import "DDImageCellView.h"
 
+#import "DDContact.h"
+
 #import <Masonry/Masonry.h>
+#import "DDBaseDBHandle+Contact.h"
+
+#import "MBProgressHUD+CY.h"
 
 @interface DDAddContactViewController ()<UITextFieldDelegate>
 
@@ -20,6 +25,8 @@
 @property (nonatomic, weak) DDLabelCellView *numberView;
 
 @property (nonatomic, strong) UIBarButtonItem *saveButton;
+
+@property (nonatomic, strong) DDContact *contact;
 
 @end
 
@@ -165,7 +172,15 @@
         [self presentViewController:alert animated:YES completion:nil];
     } else {
         //附加判断逻辑？
-        // TODO 提交保存
+        
+        self.contact.number = _numberView.textField.text;
+        self.contact.nickname = _nameView.textField.text;
+        
+        DDBaseDBHandle *handle = [DDBaseDBHandle shareDataBaseHandle];
+        if ([handle insertContact:_contact]) {
+            [MBProgressHUD showShortMessage:@"保存成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 
@@ -178,6 +193,14 @@
         [_saveButton setTintColor:[UIColor whiteColor]];
     }
     return _saveButton;
+}
+
+- (DDContact *)contact
+{
+    if (_contact == nil) {
+        _contact = [[DDContact alloc] init];
+    }
+    return _contact;
 }
 
 @end

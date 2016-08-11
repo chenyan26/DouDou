@@ -14,15 +14,24 @@
 
 #import "DDContactsSearchViewController.h"
 #import "DDAddContactViewController.h"
+#import "DDContact.h"
+#import "DDBaseDBHandle+Contact.h"
+#import "DDDetailViewController.h"
+#import "DDContactsDataHelper.h"
 
 @interface DDContactsViewController ()<UISearchBarDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *addContactBtn;
-@property (nonatomic, strong) DDAddContactViewController *addVC;
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) DDContactsSearchViewController *searchVC;
 
+// 数据源
+@property (nonatomic, strong) NSMutableArray *contacts;
+// 格式化的contact列表
+@property (nonatomic, strong) NSMutableArray *formattedData;
+// 拼音首字母列表
+@property (nonatomic, strong) NSMutableArray *sectionList;
 
 @end
 
@@ -33,6 +42,12 @@ static const NSString *kContactsHead = @"kContactsHead";
 
 @implementation DDContactsViewController
 
+{
+    DDAddContactViewController *addVC;
+    DDDetailViewController *detailVC;
+    DDBaseDBHandle *handle;
+}
+
 #pragma mark - life cycle
 
 - (void)viewDidLoad {
@@ -42,8 +57,8 @@ static const NSString *kContactsHead = @"kContactsHead";
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-//    [self.tableView setSectionIndexBackgroundColor:[UIColor clearColor]];
-//    [self.tableView setSectionIndexColor:DEFAULT_NAVBAR_COLOR];
+    [self.tableView setSectionIndexBackgroundColor:[UIColor clearColor]];
+    [self.tableView setSectionIndexColor:DEFAULT_NAVBAR_COLOR];
     
     [self.tableView setTableHeaderView:self.searchController.searchBar];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
@@ -54,6 +69,15 @@ static const NSString *kContactsHead = @"kContactsHead";
     [self.tableView registerClass:[DDContactsHeadView class] forHeaderFooterViewReuseIdentifier:(NSString *)kContactsHead];
     
     [self.navigationItem setRightBarButtonItem:self.addContactBtn];
+    
+    //数据源
+    [self setContactData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self setContactData];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,15 +89,17 @@ static const NSString *kContactsHead = @"kContactsHead";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 1 + 2;
+    return 1 + _formattedData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     if (section == 0) {
-        return 3;
-    } else{
+//        return 3;
         return 2;
+    } else{
+        NSArray *array = [_formattedData objectAtIndex:section - 1];
+        return array.count;
     }
 }
 
@@ -87,9 +113,9 @@ static const NSString *kContactsHead = @"kContactsHead";
     if (section == 0) {
         return nil;
     } else {
-        DDContactsHeadView *headView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)kContactsHead];
-        [headView setTitle:@"K"];
-        return headView;
+        DDContactsHeadView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)kContactsHead];
+        [view setTitle:[_sectionList objectAtIndex:section]];
+        return view;
     }
 }
 
@@ -104,11 +130,11 @@ static const NSString *kContactsHead = @"kContactsHead";
                 [cell setWithLeftImageName:@"tabbar_meHL" andText:@"新的朋友"];
                 [cell setBottomLineStyle:CellLineStyleFill];
                 break;
+//            case 1:
+//                [cell setWithLeftImageName:@"tabbar_meHL" andText:@"手机通讯录"];
+//                [cell setBottomLineStyle:CellLineStyleFill];
+//                break;
             case 1:
-                [cell setWithLeftImageName:@"tabbar_meHL" andText:@"手机通讯录"];
-                [cell setBottomLineStyle:CellLineStyleFill];
-                break;
-            case 2:
                 [cell setWithLeftImageName:@"tabbar_meHL" andText:@"手机看家"];
                 [cell setBottomLineStyle:CellLineStyleNone];
                 break;
@@ -118,18 +144,45 @@ static const NSString *kContactsHead = @"kContactsHead";
         return cell;
     } else {
         DDContactsCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kContactsCell forIndexPath:indexPath];
-        [cell setWithLeftImageName:@"add_friend_icon_offical" andText:@"kiyola"];
+//        DDContact *contact = self.contacts[indexPath.row];
+//        [cell setWithLeftImageName:@"add_friend_icon_offical" andText:contact.nickname];
+//        return cell;
+        NSArray *array = [_formattedData objectAtIndex:indexPath.section - 1];
+        DDContact *contact = [array objectAtIndex:indexPath.row];
+        [cell setWithLeftImageName:@"add_friend_icon_offical" andText:contact.nickname];
+        
+        [cell setTopLineStyle:CellLineStyleNone];
+        
+        if (indexPath.row == array.count - 1) {
+            indexPath.section == _formattedData.count ? [cell setBottomLineStyle:CellLineStyleFill] :[cell setBottomLineStyle:CellLineStyleNone];
+        }
+        else {
+            [cell setBottomLineStyle:CellLineStyleDefault];
+        }
+        
         return cell;
     }
 }
 
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return _sectionList;
+}
+
 #pragma mark - private methods
+
+- (void)setContactData
+{
+    _formattedData = [DDContactsDataHelper getContactsDataBy:self.contacts];
+    _sectionList = [DDContactsDataHelper getContactsSectionBy:_formattedData];
+}
 
 #pragma mark - event response
 
 - (void)addContactBtnClick
 {
-    [self.navigationController pushViewController:[[DDAddContactViewController alloc] init] animated:YES];
+    addVC = [[DDAddContactViewController alloc] init];
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 
@@ -143,39 +196,24 @@ static const NSString *kContactsHead = @"kContactsHead";
         return MARGIN_CELL;
     }
 }
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            
+        }
+    } else {
+        NSArray *array = [_formattedData objectAtIndex:indexPath.section -1];
+        DDContact *contact = [array objectAtIndex:indexPath.row];
+        detailVC = [[DDDetailViewController alloc] initWithContact:contact];
+        
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - UISearchBarDelegate
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -221,6 +259,18 @@ static const NSString *kContactsHead = @"kContactsHead";
 //        [_searchController.searchBar.layer setBorderColor:[UIColor blueColor].CGColor];
     }
     return _searchController;
+}
+
+#pragma mark - getter and setter
+
+- (NSMutableArray *)contacts
+{
+    handle = [DDBaseDBHandle shareDataBaseHandle];
+    if (_contacts == nil) {
+        [handle creatContactTable];
+    }
+    _contacts = [handle selectAllContactFromContactTable];
+    return _contacts;
 }
 
 @end

@@ -141,19 +141,18 @@
 - (void) loginClick:(id)sender
 {
     MBProgressHUD *hud = [MBProgressHUD showMessage:@"正在连接服务器"];
-    
-    // 拿到 account来做判断－登录
-    DDAccount *account = [DDAccountTool account];
-    
-    if (account == nil) {
-        account = [[DDAccount alloc] init];
-        account.number = _numberView.textField.text;
-        account.password = _pwdView.textField.text;
-    }
+
+    DDAccount *account = [[DDAccount alloc] init];
+    account.number = _numberView.textField.text;
+    account.password = _pwdView.textField.text;
     
     [DDAccountAPIManager signinWithAccount:account success:^(DDJsonResponse *resopnseObj) {
         [hud setHidden:YES];
-        if (! resopnseObj.errcode) {
+        if (resopnseObj.errcode == OK) {
+            
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:@0 forKey:LOGIN_STATE_KEY];;
+            [defaults synchronize];
             
             [DDAccountTool save:account];
             [DDControllerTool chooseRootViewController:RootControllerTypeRoot];
@@ -239,11 +238,9 @@
         make.top.equalTo(_loginBtn.mas_bottom).with.offset(20);
         make.right.mas_equalTo(-30);
     }];
-    
+
 }
 
-
 #pragma mark - getters and setters
-
 
 @end

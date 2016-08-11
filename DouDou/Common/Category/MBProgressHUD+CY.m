@@ -52,7 +52,7 @@
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     
-    [hud setMode:MBProgressHUDModeAnnularDeterminate];
+    [hud setMode:MBProgressHUDModeIndeterminate];
     
     [self hideDim:NO hud:hud];
     

@@ -97,9 +97,15 @@
 
 - (void)setCallRecord:(DDCallRecord *)callRecord
 {
-    [_nameLabel setText:callRecord.name];
+    // TODO callRecord 选择 图标
+    [_nameLabel setText:callRecord.nickname];
     [_numberLabel setText:callRecord.number];
-    [_timeLabel setText:callRecord.time];
+    
+    if ([callRecord.time isToday]) {
+        [_timeLabel setText:[callRecord.time stringWithHS]];
+    } else {
+        [_timeLabel setText:[callRecord.time stringWithMD]];
+    }
 }
 
 -(UIImageView *)leftImageView

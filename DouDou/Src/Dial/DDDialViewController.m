@@ -16,6 +16,8 @@
 #import "DDDetailViewController.h"
 
 #import "DDDialBoardView.h"
+#import "DDBaseDBHandle+CallRecord.h"
+#import "DDContact.h"
 
 @interface DDDialViewController ()<UITableViewDelegate, UITableViewDataSource, DDDialCellDelegate>
 
@@ -30,6 +32,11 @@
 @property (nonatomic, weak) UIButton *dialBoardButton;
 @property (nonatomic, weak) UIButton *callButton;
 
+//数据源
+@property (nonatomic, strong) NSMutableArray *callRecords;
+
+@property (nonatomic, strong) UIBarButtonItem *clearButton;
+
 @end
 
 
@@ -40,10 +47,14 @@ static const CGFloat kRowHeight = 60.0f;
 {
     DDCallViewController *callVC;
     DDDetailViewController *detailVC;
+    
+    DDBaseDBHandle *handle;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationItem setLeftBarButtonItem:self.clearButton];
     
     // tabbar = 49, toolView = 49  ==> 98
     UITableView *t = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, self.view.height - 98)];
@@ -75,7 +86,7 @@ static const CGFloat kRowHeight = 60.0f;
     _callButton = btn;
     [_toolView addSubview:_callButton];
     
-    [_callButton setTitle:@"call" forState:UIControlStateNormal];
+    [_callButton setTitle:@"呼叫" forState:UIControlStateNormal];
     [_callButton setBackgroundColor:[UIColor redColor]];
     [_callButton addTarget:self action:@selector(callButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [_callButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -112,6 +123,8 @@ static const CGFloat kRowHeight = 60.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,10 +135,15 @@ static const CGFloat kRowHeight = 60.0f;
 #pragma mark - DDDialCellDelegate
 
 - (void) dialCellDidRightButton:(DDDialCell *)dialCell {
-    detailVC = [[DDDetailViewController alloc] init];
+    
+    DDCallRecord *callRecord = [_callRecords objectAtIndex:dialCell.row];
+    DDContact *contact = [[DDContact alloc] init];
+    contact.nickname = callRecord.nickname;
+    contact.number = callRecord.number;
+    
+    detailVC = [[DDDetailViewController alloc] initWithContact:contact];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
-
 
 
 #pragma mark - UITableViewDataSource
@@ -135,17 +153,15 @@ static const CGFloat kRowHeight = 60.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.callRecords.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DDDialCell *cell = [tableView dequeueReusableCellWithIdentifier:(NSString *)kDialCell forIndexPath:indexPath];
     cell.delegate = self;
-    DDCallRecord *callR = [[DDCallRecord alloc] init];
-    callR.name = @"kiyola";
-    callR.number = @"235325436";
-    callR.time = @"05:04";
-    [cell setCallRecord:callR];
+
+    [cell setCallRecord:[self.callRecords objectAtIndex:indexPath.row]];
+    [cell setRow:indexPath.row];
     return cell;
 }
 
@@ -157,11 +173,13 @@ static const CGFloat kRowHeight = 60.0f;
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    /**
-     呼叫－－－需要带上 dialrecord 数据
-     
-     */
-    callVC = [[DDCallViewController alloc] init];
+  
+    DDCallRecord *callRecord = [_callRecords objectAtIndex:indexPath.row];
+    DDContact *contact = [[DDContact alloc] init];
+    contact.nickname = callRecord.nickname;
+    contact.number = callRecord.number;
+    
+    callVC = [[DDCallViewController alloc] initWithContact:contact];
     
     [self.navigationController setNavigationBarHidden:YES];
     [self.navigationController pushViewController:callVC animated:NO];
@@ -208,14 +226,49 @@ static const CGFloat kRowHeight = 60.0f;
 
 - (void)callButtonClick:(id)sender
 {
-    /**
-     *  通过 text ＝ number 呼叫
-     */
-    NSLog(@"打电话啊:%@", _dialBoardView.text);
+    DDContact *contact = [[DDContact alloc] init];
+    contact.number = _dialBoardView.text;
     
+     // TODO 号码的匹配
+    /**
+     呼叫－－－需要带上 contact 数据
+     */
+    
+    callVC = [[DDCallViewController alloc] initWithContact:contact];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController pushViewController:callVC animated:YES];
+}
+
+- (void)clearButtonClick:(id)sender
+{
+    //清空 t_callRecord
+    if ([handle clearCallRecord]) {
+        [self.tableView reloadData];
+    } else {
+        [MBProgressHUD showShortMessage:@"清空失败"];
+    }
 }
 
 #pragma mark - private methods
 
 #pragma mark - getters and setters
+
+- (NSMutableArray *)callRecords
+{
+    handle = [DDBaseDBHandle shareDataBaseHandle];
+    if (_callRecords == nil) {
+        [handle creatCallRecordTable];
+    }
+    _callRecords = [handle selectAllCallRecordFromCallRecordTable];
+    return _callRecords;
+}
+
+- (UIBarButtonItem *)clearButton
+{
+    if (_clearButton == nil) {
+        _clearButton = [[UIBarButtonItem alloc] initWithTitle:@"清空" style:UIBarButtonItemStylePlain target:self action:@selector(clearButtonClick:)];
+        [_clearButton setTintColor:[UIColor whiteColor]];
+    }
+    return _clearButton;
+}
 @end
