@@ -19,7 +19,6 @@
 		5F5901F11D4B510F009F7DFA /* right_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901EE1D4B510F009F7DFA /* right_icon@3x.png */; };
 		5F5902011D4B5D3D009F7DFA /* tx01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901FE1D4B5D3D009F7DFA /* tx01@2x.png */; };
 		5F5902021D4B5D3D009F7DFA /* tx01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5901FF1D4B5D3D009F7DFA /* tx01@3x.png */; };
-		5F59E6EF1DBA0BFD004D3416 /* TestOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59E6ED1DBA0BFD004D3416 /* TestOneViewController.m */; };
 		5F69E35A1DB8B5D200DB213C /* MBProgressHUD+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F69E3481DB8B5D200DB213C /* MBProgressHUD+CY.m */; };
 		5F69E35B1DB8B5D200DB213C /* NSDate+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F69E34A1DB8B5D200DB213C /* NSDate+CY.m */; };
 		5F69E35C1DB8B5D200DB213C /* NSString+CY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F69E34C1DB8B5D200DB213C /* NSString+CY.m */; };
@@ -47,6 +46,10 @@
 		5F73320B1D81404B001EA890 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F73320A1D81404B001EA890 /* Security.framework */; };
 		5F73320D1D814059001EA890 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F73320C1D814059001EA890 /* SystemConfiguration.framework */; };
 		5F73320F1D814068001EA890 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F73320E1D814068001EA890 /* QuartzCore.framework */; };
+		5F76CFCD1DC1E2560099E2D4 /* DDRCConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFCC1DC1E2560099E2D4 /* DDRCConversationViewController.m */; };
+		5F76CFD01DC1E69D0099E2D4 /* DDRCConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFCF1DC1E69D0099E2D4 /* DDRCConversationListViewController.m */; };
+		5F76CFD31DC2EA8D0099E2D4 /* DDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFD21DC2EA8D0099E2D4 /* DDRootViewController.m */; };
+		5F76CFD71DC2EB6E0099E2D4 /* DDContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFD61DC2EB6E0099E2D4 /* DDContactsViewController.m */; };
 		5F98D6EB1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */; };
 		6A90EB3235424293E3762DEE /* Pods_DouDou_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F853610BA96BE9524D58A883 /* Pods_DouDou_DouDouTests.framework */; };
 		81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */; };
@@ -87,8 +90,6 @@
 		5F5901EE1D4B510F009F7DFA /* right_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "right_icon@3x.png"; path = "Resource/right_icon@3x.png"; sourceTree = "<group>"; };
 		5F5901FE1D4B5D3D009F7DFA /* tx01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tx01@2x.png"; path = "Resource/tx01@2x.png"; sourceTree = "<group>"; };
 		5F5901FF1D4B5D3D009F7DFA /* tx01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tx01@3x.png"; path = "Resource/tx01@3x.png"; sourceTree = "<group>"; };
-		5F59E6EC1DBA0BFD004D3416 /* TestOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOneViewController.h; sourceTree = "<group>"; };
-		5F59E6ED1DBA0BFD004D3416 /* TestOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestOneViewController.m; sourceTree = "<group>"; };
 		5F69E3471DB8B5D200DB213C /* MBProgressHUD+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CY.h"; sourceTree = "<group>"; };
 		5F69E3481DB8B5D200DB213C /* MBProgressHUD+CY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CY.m"; sourceTree = "<group>"; };
 		5F69E3491DB8B5D200DB213C /* NSDate+CY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CY.h"; sourceTree = "<group>"; };
@@ -163,6 +164,14 @@
 		5F73320A1D81404B001EA890 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5F73320C1D814059001EA890 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F73320E1D814068001EA890 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5F76CFCB1DC1E2560099E2D4 /* DDRCConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRCConversationViewController.h; sourceTree = "<group>"; };
+		5F76CFCC1DC1E2560099E2D4 /* DDRCConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRCConversationViewController.m; sourceTree = "<group>"; };
+		5F76CFCE1DC1E69D0099E2D4 /* DDRCConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRCConversationListViewController.h; sourceTree = "<group>"; };
+		5F76CFCF1DC1E69D0099E2D4 /* DDRCConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRCConversationListViewController.m; sourceTree = "<group>"; };
+		5F76CFD11DC2EA8D0099E2D4 /* DDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRootViewController.h; sourceTree = "<group>"; };
+		5F76CFD21DC2EA8D0099E2D4 /* DDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRootViewController.m; sourceTree = "<group>"; };
+		5F76CFD51DC2EB6E0099E2D4 /* DDContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsViewController.h; sourceTree = "<group>"; };
+		5F76CFD61DC2EB6E0099E2D4 /* DDContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsViewController.m; sourceTree = "<group>"; };
 		5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteEmoticonBtn@2x.png"; path = "Resource/DeleteEmoticonBtn@2x.png"; sourceTree = "<group>"; };
 		7297474A5DBB664413A96E8B /* Pods_DouDou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,7 +295,10 @@
 		5F05AEAD1D499FB700FF8495 /* Src---------------------- */ = {
 			isa = PBXGroup;
 			children = (
-				5F69E3671DB8BECA00DB213C /* Test */,
+				5F76CFD11DC2EA8D0099E2D4 /* DDRootViewController.h */,
+				5F76CFD21DC2EA8D0099E2D4 /* DDRootViewController.m */,
+				5F76CFCA1DC1E2560099E2D4 /* Conversation */,
+				5F76CFD41DC2EB3D0099E2D4 /* Contacts */,
 			);
 			name = "Src----------------------";
 			path = Src;
@@ -386,15 +398,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		5F69E3671DB8BECA00DB213C /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				5F59E6EC1DBA0BFD004D3416 /* TestOneViewController.h */,
-				5F59E6ED1DBA0BFD004D3416 /* TestOneViewController.m */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		5F7331A71D810C56001EA890 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +474,26 @@
 				5F7331CB1D810C56001EA890 /* RTCVideoTrack.h */,
 			);
 			path = public;
+			sourceTree = "<group>";
+		};
+		5F76CFCA1DC1E2560099E2D4 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				5F76CFCE1DC1E69D0099E2D4 /* DDRCConversationListViewController.h */,
+				5F76CFCF1DC1E69D0099E2D4 /* DDRCConversationListViewController.m */,
+				5F76CFCB1DC1E2560099E2D4 /* DDRCConversationViewController.h */,
+				5F76CFCC1DC1E2560099E2D4 /* DDRCConversationViewController.m */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		5F76CFD41DC2EB3D0099E2D4 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				5F76CFD51DC2EB6E0099E2D4 /* DDContactsViewController.h */,
+				5F76CFD61DC2EB6E0099E2D4 /* DDContactsViewController.m */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		C0447FF8AD3DFCDFF1DF2FB6 /* Frameworks */ = {
@@ -716,10 +739,13 @@
 			files = (
 				5F69E3661DB8B64F00DB213C /* DDNetworking.m in Sources */,
 				5F69E3611DB8B5D200DB213C /* DDCommonTableViewCell.m in Sources */,
-				5F59E6EF1DBA0BFD004D3416 /* TestOneViewController.m in Sources */,
 				5F69E35C1DB8B5D200DB213C /* NSString+CY.m in Sources */,
 				5F69E3601DB8B5D200DB213C /* DDControllerTool.m in Sources */,
+				5F76CFD31DC2EA8D0099E2D4 /* DDRootViewController.m in Sources */,
 				5F69E35A1DB8B5D200DB213C /* MBProgressHUD+CY.m in Sources */,
+				5F76CFCD1DC1E2560099E2D4 /* DDRCConversationViewController.m in Sources */,
+				5F76CFD71DC2EB6E0099E2D4 /* DDContactsViewController.m in Sources */,
+				5F76CFD01DC1E69D0099E2D4 /* DDRCConversationListViewController.m in Sources */,
 				5F05AE891D48F70D00FF8495 /* main.m in Sources */,
 				5F1257271DB8631500D2CBFB /* DDConst.m in Sources */,
 				5F69E3691DBA0EFC00DB213C /* AppDelegate.m in Sources */,
@@ -884,6 +910,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tv.caratel.doudoupush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = doudoupush_dev_provision_profile;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
@@ -893,8 +920,8 @@
 			baseConfigurationReference = 128FAD7F90B9F5781C2213A0 /* Pods-DouDou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 4NC679APW8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -921,6 +948,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tv.caratel.doudoupush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = doudoupush_Hoc_provision_profile;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;

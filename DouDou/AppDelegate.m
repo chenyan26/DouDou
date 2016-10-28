@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 
 //#import "RTCPeerConnectionFactory.h"
-#import "TestOneViewController.h"
+#import <RongIMKit/RongIMKit.h>
+
+#import "DDRootViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +25,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [self.window setRootViewController:[[TestOneViewController alloc] init]];
+    //融云
+    [self setupRongCloud];
+    
+    [self.window setRootViewController:[[DDRootViewController alloc] init]];
     
     /*
     DDAccount *account = [DDAccountTool account];
@@ -76,6 +81,32 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
 //    [RTCPeerConnectionFactory deinitializeSSL];
+}
+
+#pragma mark - 融云
+- (void)setupRongCloud {
+    
+    //初始化融云SDK
+    [[RCIM sharedRCIM] initWithAppKey:@"mgb7ka1nbkrqg"];
+    
+    //登录融云服务器,开始阶段可以先从融云API调试网站获取，之后token需要通过服务器到融云服务器取。
+    /* 自行注册
+     name=test001
+     userId=12345678909
+     token=Hc3OUYidfM8vP74qYOcXkt7vKmzAl4U73Scd9SCMNX7A7uo9fpS6VndgjZkuXf7gWEA2sIyv63NCkTAmripe2GQE7yt+0RE3
+     */
+    NSString *token=@"Hc3OUYidfM8vP74qYOcXkt7vKmzAl4U73Scd9SCMNX7A7uo9fpS6VndgjZkuXf7gWEA2sIyv63NCkTAmripe2GQE7yt+0RE3";
+    
+    [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
+        NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"登陆的错误码为:%ld", (long)status);
+    } tokenIncorrect:^{
+        //token过期或者不正确。
+        //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+        //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+        NSLog(@"token错误");
+    }];
 }
 
 @end
