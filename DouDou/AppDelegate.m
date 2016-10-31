@@ -95,7 +95,8 @@
      userId=12345678909
      token=Hc3OUYidfM8vP74qYOcXkt7vKmzAl4U73Scd9SCMNX7A7uo9fpS6VndgjZkuXf7gWEA2sIyv63NCkTAmripe2GQE7yt+0RE3
      */
-    NSString *token=@"Hc3OUYidfM8vP74qYOcXkt7vKmzAl4U73Scd9SCMNX7A7uo9fpS6VndgjZkuXf7gWEA2sIyv63NCkTAmripe2GQE7yt+0RE3";
+//    NSString *token=@"Hc3OUYidfM8vP74qYOcXkt7vKmzAl4U73Scd9SCMNX7A7uo9fpS6VndgjZkuXf7gWEA2sIyv63NCkTAmripe2GQE7yt+0RE3";
+    NSString *token = @"KKEFbJBUOhJUPW+NqMAv7d7vKmzAl4U73Scd9SCMNX7A7uo9fpS6ViBELv5kng/qrko2RFj0XOlCkTAmripe2I0hGZqzNwEr";
     
     [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);

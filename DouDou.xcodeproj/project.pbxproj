@@ -50,6 +50,9 @@
 		5F76CFD01DC1E69D0099E2D4 /* DDRCConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFCF1DC1E69D0099E2D4 /* DDRCConversationListViewController.m */; };
 		5F76CFD31DC2EA8D0099E2D4 /* DDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFD21DC2EA8D0099E2D4 /* DDRootViewController.m */; };
 		5F76CFD71DC2EB6E0099E2D4 /* DDContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFD61DC2EB6E0099E2D4 /* DDContactsViewController.m */; };
+		5F76CFE91DC34D760099E2D4 /* DDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFE81DC34D760099E2D4 /* DDNavigationViewController.m */; };
+		5F76CFFA1DC353D70099E2D4 /* DDMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFF91DC353D70099E2D4 /* DDMyViewController.m */; };
+		5F7A572B1DC6E8400072701C /* DDContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A572A1DC6E8400072701C /* DDContact.m */; };
 		5F98D6EB1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */; };
 		6A90EB3235424293E3762DEE /* Pods_DouDou_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F853610BA96BE9524D58A883 /* Pods_DouDou_DouDouTests.framework */; };
 		81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */; };
@@ -172,6 +175,12 @@
 		5F76CFD21DC2EA8D0099E2D4 /* DDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRootViewController.m; sourceTree = "<group>"; };
 		5F76CFD51DC2EB6E0099E2D4 /* DDContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactsViewController.h; sourceTree = "<group>"; };
 		5F76CFD61DC2EB6E0099E2D4 /* DDContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactsViewController.m; sourceTree = "<group>"; };
+		5F76CFE71DC34D760099E2D4 /* DDNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNavigationViewController.h; sourceTree = "<group>"; };
+		5F76CFE81DC34D760099E2D4 /* DDNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNavigationViewController.m; sourceTree = "<group>"; };
+		5F76CFF81DC353D70099E2D4 /* DDMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMyViewController.h; sourceTree = "<group>"; };
+		5F76CFF91DC353D70099E2D4 /* DDMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMyViewController.m; sourceTree = "<group>"; };
+		5F7A57291DC6E8400072701C /* DDContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContact.h; sourceTree = "<group>"; };
+		5F7A572A1DC6E8400072701C /* DDContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContact.m; sourceTree = "<group>"; };
 		5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteEmoticonBtn@2x.png"; path = "Resource/DeleteEmoticonBtn@2x.png"; sourceTree = "<group>"; };
 		7297474A5DBB664413A96E8B /* Pods_DouDou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,10 +304,13 @@
 		5F05AEAD1D499FB700FF8495 /* Src---------------------- */ = {
 			isa = PBXGroup;
 			children = (
+				5F76CFE71DC34D760099E2D4 /* DDNavigationViewController.h */,
+				5F76CFE81DC34D760099E2D4 /* DDNavigationViewController.m */,
 				5F76CFD11DC2EA8D0099E2D4 /* DDRootViewController.h */,
 				5F76CFD21DC2EA8D0099E2D4 /* DDRootViewController.m */,
 				5F76CFCA1DC1E2560099E2D4 /* Conversation */,
 				5F76CFD41DC2EB3D0099E2D4 /* Contacts */,
+				5F76CFF71DC353B70099E2D4 /* My */,
 			);
 			name = "Src----------------------";
 			path = Src;
@@ -321,7 +333,6 @@
 		5F69E3441DB8B5D200DB213C /* Classes---------------------- */ = {
 			isa = PBXGroup;
 			children = (
-				5F69E3621DB8B61600DB213C /* DataBase */,
 				5F69E3631DB8B61600DB213C /* Networking */,
 				5F69E3451DB8B5D200DB213C /* Common */,
 			);
@@ -360,6 +371,8 @@
 		5F69E3511DB8B5D200DB213C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F7A57291DC6E8400072701C /* DDContact.h */,
+				5F7A572A1DC6E8400072701C /* DDContact.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,13 +393,6 @@
 				5F69E3591DB8B5D200DB213C /* DDCommonTableViewCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5F69E3621DB8B61600DB213C /* DataBase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataBase;
 			sourceTree = "<group>";
 		};
 		5F69E3631DB8B61600DB213C /* Networking */ = {
@@ -495,6 +501,16 @@
 			);
 			path = Contacts;
 			sourceTree = "<group>";
+		};
+		5F76CFF71DC353B70099E2D4 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				5F76CFF81DC353D70099E2D4 /* DDMyViewController.h */,
+				5F76CFF91DC353D70099E2D4 /* DDMyViewController.m */,
+			);
+			name = My;
+			path = DouDou/Src/My;
+			sourceTree = SOURCE_ROOT;
 		};
 		C0447FF8AD3DFCDFF1DF2FB6 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -747,10 +763,13 @@
 				5F76CFD71DC2EB6E0099E2D4 /* DDContactsViewController.m in Sources */,
 				5F76CFD01DC1E69D0099E2D4 /* DDRCConversationListViewController.m in Sources */,
 				5F05AE891D48F70D00FF8495 /* main.m in Sources */,
+				5F7A572B1DC6E8400072701C /* DDContact.m in Sources */,
 				5F1257271DB8631500D2CBFB /* DDConst.m in Sources */,
 				5F69E3691DBA0EFC00DB213C /* AppDelegate.m in Sources */,
 				5F69E35D1DB8B5D200DB213C /* UIImage+CY.m in Sources */,
+				5F76CFFA1DC353D70099E2D4 /* DDMyViewController.m in Sources */,
 				5F69E35E1DB8B5D200DB213C /* UIView+CY.m in Sources */,
+				5F76CFE91DC34D760099E2D4 /* DDNavigationViewController.m in Sources */,
 				5F69E35B1DB8B5D200DB213C /* NSDate+CY.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@
 
 //#import "YYKit.h"
 #import "Masonry.h"
+#import <RongIMKit/RongIMKit.h>
+#import "Realm.h"
 
 //********************** LOG *************************//
 #ifdef DEBUG

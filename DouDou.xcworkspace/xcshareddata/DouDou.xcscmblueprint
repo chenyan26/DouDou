@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "25FEC41A788C599D512CF62FB8E598D372EF1B01",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D384EB9CBFF25015E259E82677CDD9511A7CF229" : 9223372036854775807,
+    "25FEC41A788C599D512CF62FB8E598D372EF1B01" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C5B24516-AE29-45BE-A40C-C15E4B70AB03",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D384EB9CBFF25015E259E82677CDD9511A7CF229" : "..\/..\/Project\/NGB\/im-project\/IOSPhone",
+    "25FEC41A788C599D512CF62FB8E598D372EF1B01" : "DouDou\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DouDou",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DouDou.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/chenyan26\/DouDou.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "25FEC41A788C599D512CF62FB8E598D372EF1B01"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "dev.ngblab.org:\/home\/git\/repository\/im\/IOSPhone.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D384EB9CBFF25015E259E82677CDD9511A7CF229"
+    }
+  ]
+}

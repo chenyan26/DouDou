@@ -9,7 +9,9 @@
 #import "DDRCConversationListViewController.h"
 #import "DDRCConversationViewController.h"
 
-@interface DDRCConversationListViewController ()
+#import "DDContact.h"
+
+@interface DDRCConversationListViewController ()<RCIMUserInfoDataSource>
 
 @end
 
@@ -34,7 +36,7 @@
     [self setTitle:@"消息"];
     
     //自定义导航左右按钮
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemPressed:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_add"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemPressed:)];
     [rightButton setTintColor:[UIColor whiteColor]];
     /*
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -65,12 +67,10 @@
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType conversationModel:(RCConversationModel *)model atIndexPath:(NSIndexPath *)indexPath {
 
     DDRCConversationViewController *conversationVC = [[DDRCConversationViewController alloc] init];
-//    conversationVC.conversationType = model.conversationType;
-//    conversationVC.targetId = model.targetId;
     
     conversationVC.conversationType = ConversationType_PRIVATE;
     conversationVC.targetId = model.targetId;
-    conversationVC.title = @"test002";
+    conversationVC.title = model.conversationTitle;
     [conversationVC setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
@@ -97,13 +97,14 @@
 /**
  *此方法中要提供给融云用户的信息，建议缓存到本地，然后改方法每次从您的缓存返回
  */
-// 从数据库取
+//设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void(^)(RCUserInfo* userInfo))completion {
     //此处为了演示写了一个用户信息
+    /*
     if ([@"12345678901" isEqual:userId]) {
         RCUserInfo *user = [[RCUserInfo alloc]init];
         user.userId = @"12345678901";
-        user.name = @"test002";
+        user.name = @"test001";
         user.portraitUri = @"https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008";
         
         return completion(user);
@@ -112,6 +113,27 @@
         user.userId = @"2";
         user.name = @"测试2";
         user.portraitUri = @"https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008";
+        return completion(user);
+    }
+     */
+
+    /*
+    RLMResults<DDContact *> *contacts = [DDContact allObjects];
+    if (contacts) {
+        for (DDContact *contact in contacts) {
+            if ([contact.userId isEqual:userId]) {
+                RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:userId name:contact.name portrait:contact.portraitUri];
+                return completion(user);
+            }
+        }
+    }
+     */
+    
+    // 使用 NSPredicate 查询
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"userId = %@", userId];
+    RLMResults<DDContact *> *contacts = [DDContact objectsWithPredicate:pred];
+    if (contacts) {
+        RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:userId name:contacts.firstObject.name portrait:contacts.firstObject.portraitUri];
         return completion(user);
     }
 }

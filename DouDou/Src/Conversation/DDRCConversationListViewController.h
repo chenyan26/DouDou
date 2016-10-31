@@ -6,9 +6,7 @@
 //  Copyright © 2016年 caratel. All rights reserved.
 //
 
-#import <RongIMKit/RongIMKit.h>
-
-@interface DDRCConversationListViewController : RCConversationListViewController<RCIMUserInfoDataSource>
+@interface DDRCConversationListViewController : RCConversationListViewController
 
 
 @end

@@ -9,10 +9,14 @@ target 'DouDou' do
   pod 'AFNetworking'
   pod 'Masonry'
   pod 'MJExtension'
-  pod 'FMDB'
+#  pod 'FMDB'
   pod 'MBProgressHUD'
   pod 'YYKit'
-  pod 'RongCloudIMKit'
+  pod 'Realm'
+  
+#  pod 'RongCloudIMKit'
+  pod 'RongCloudIMKitWithVoip'
+
 
   target 'DouDouTests' do
        inherit! :search_paths

@@ -6,8 +6,6 @@
 //  Copyright © 2016年 caratel. All rights reserved.
 //
 
-#import <RongIMKit/RongIMKit.h>
-
 @interface DDRCConversationViewController : RCConversationViewController
 
 @end
