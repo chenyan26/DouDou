@@ -54,6 +54,7 @@
 		5F76CFFA1DC353D70099E2D4 /* DDMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F76CFF91DC353D70099E2D4 /* DDMyViewController.m */; };
 		5F7A572B1DC6E8400072701C /* DDContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A572A1DC6E8400072701C /* DDContact.m */; };
 		5F98D6EB1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */; };
+		5FECB4E11DC736AC00F9B0AA /* DDContactInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FECB4E01DC736AC00F9B0AA /* DDContactInfoViewController.m */; };
 		6A90EB3235424293E3762DEE /* Pods_DouDou_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F853610BA96BE9524D58A883 /* Pods_DouDou_DouDouTests.framework */; };
 		81F9CE1AC37CE99F6A5BBCEC /* Pods_DouDouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */; };
 		F69A7A736F444C16E65185F4 /* Pods_DouDou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7297474A5DBB664413A96E8B /* Pods_DouDou.framework */; };
@@ -182,6 +183,8 @@
 		5F7A57291DC6E8400072701C /* DDContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContact.h; sourceTree = "<group>"; };
 		5F7A572A1DC6E8400072701C /* DDContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContact.m; sourceTree = "<group>"; };
 		5F98D6EA1D51BFEE00AED0ED /* DeleteEmoticonBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteEmoticonBtn@2x.png"; path = "Resource/DeleteEmoticonBtn@2x.png"; sourceTree = "<group>"; };
+		5FECB4DF1DC736AC00F9B0AA /* DDContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContactInfoViewController.h; sourceTree = "<group>"; };
+		5FECB4E01DC736AC00F9B0AA /* DDContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContactInfoViewController.m; sourceTree = "<group>"; };
 		7297474A5DBB664413A96E8B /* Pods_DouDou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A1A3DD9F378A722E48F5FA /* Pods_DouDouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouDouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7531A7B4D137B48EF58A06AE /* Pods-DouDouTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouDouTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouDouTests/Pods-DouDouTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -498,6 +501,8 @@
 			children = (
 				5F76CFD51DC2EB6E0099E2D4 /* DDContactsViewController.h */,
 				5F76CFD61DC2EB6E0099E2D4 /* DDContactsViewController.m */,
+				5FECB4DF1DC736AC00F9B0AA /* DDContactInfoViewController.h */,
+				5FECB4E01DC736AC00F9B0AA /* DDContactInfoViewController.m */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -769,6 +774,7 @@
 				5F69E35D1DB8B5D200DB213C /* UIImage+CY.m in Sources */,
 				5F76CFFA1DC353D70099E2D4 /* DDMyViewController.m in Sources */,
 				5F69E35E1DB8B5D200DB213C /* UIView+CY.m in Sources */,
+				5FECB4E11DC736AC00F9B0AA /* DDContactInfoViewController.m in Sources */,
 				5F76CFE91DC34D760099E2D4 /* DDNavigationViewController.m in Sources */,
 				5F69E35B1DB8B5D200DB213C /* NSDate+CY.m in Sources */,
 			);
@@ -923,7 +929,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DouDou/Lib/voiplib",
-					"$(PROJECT_DIR)/DouDou/Lib/SDK/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = tv.caratel.doudoupush;
@@ -961,7 +966,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DouDou/Lib/voiplib",
-					"$(PROJECT_DIR)/DouDou/Lib/SDK/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = tv.caratel.doudoupush;

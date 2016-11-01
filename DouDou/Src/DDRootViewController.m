@@ -44,8 +44,8 @@
     c1.name = @"test002";
 //    c1.portraitUri = ;
     
-    c1.userId = @"12345678909";
-    c1.name = @"test001";
+//    c1.userId = @"12345678909";
+//    c1.name = @"test001";
     
     DDContact *c2 = [[DDContact alloc] init];
     c2.userId = @"12345678902";

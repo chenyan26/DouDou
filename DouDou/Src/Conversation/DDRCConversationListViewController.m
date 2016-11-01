@@ -66,10 +66,7 @@
     //重写RCConversationListViewController的onSelectedTableRow事件
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType conversationModel:(RCConversationModel *)model atIndexPath:(NSIndexPath *)indexPath {
 
-    DDRCConversationViewController *conversationVC = [[DDRCConversationViewController alloc] init];
-    
-    conversationVC.conversationType = ConversationType_PRIVATE;
-    conversationVC.targetId = model.targetId;
+    DDRCConversationViewController *conversationVC = [[DDRCConversationViewController alloc] initWithConversationType:ConversationType_PRIVATE targetId:model.targetId];
     conversationVC.title = model.conversationTitle;
     [conversationVC setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:conversationVC animated:YES];
@@ -92,6 +89,23 @@
     conversationVC.title = @"自问自答";
     [self.navigationController pushViewController:conversationVC animated:YES];
     */
+    
+    
+    // 测试发送 添加好友 的消息
+    /*
+    RCContactNotificationMessage *message = [RCContactNotificationMessage notificationWithOperation:ContactNotificationMessage_ContactOperationRequest sourceUserId:[RCIMClient sharedRCIMClient].currentUserInfo.userId targetUserId:@"12345678901" message:@"添加好友来看看" extra:@"附加的信息"];
+    // 调用RCIMClient的sendMessage方法进行发送，结果会通过回调进行反馈。
+    [[RCIMClient sharedRCIMClient] sendMessage:ConversationType_SYSTEM
+                                      targetId:@"12345678901"
+                                       content:message
+                                   pushContent:nil
+                                      pushData:nil
+                                       success:^(long messageId) {
+                                           
+                                       } error:^(RCErrorCode nErrorCode, long messageId) {
+                                      
+                                       }];
+     */
 }
 
 /**
@@ -130,12 +144,21 @@
      */
     
     // 使用 NSPredicate 查询
+    /*
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"userId = %@", userId];
     RLMResults<DDContact *> *contacts = [DDContact objectsWithPredicate:pred];
     if (contacts) {
         RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:userId name:contacts.firstObject.name portrait:contacts.firstObject.portraitUri];
         return completion(user);
     }
+     */
+    
+    DDContact *contact = [DDContact objectForPrimaryKey:userId];
+    if (contact) {
+        RCUserInfo *user = [[RCUserInfo alloc] initWithUserId:userId name:contact.name portrait:contact.portraitUri];
+        return completion(user);
+    }
+    
 }
 
 @end

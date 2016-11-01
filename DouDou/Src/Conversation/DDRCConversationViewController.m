@@ -7,19 +7,23 @@
 //
 
 #import "DDRCConversationViewController.h"
+#import "DDContactInfoViewController.h"
 
 @interface DDRCConversationViewController ()
 
 @end
 
 @implementation DDRCConversationViewController
+{
+    DDContactInfoViewController *contactInfoVC;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.displayUserNameInCell = NO;
     
-    [RCIM sharedRCIM].enabledReadReceiptConversationTypeList = @[@(ConversationType_PRIVATE)];
+    [RCIM sharedRCIM].enabledReadReceiptConversationTypeList = @[@(ConversationType_PRIVATE), @(ConversationType_SYSTEM)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,6 +42,13 @@
     if (tag == 2001) {
         NSLog(@"点击进入直播间了");
     }
+}
+
+#pragma mark - 重写
+- (void)didTapCellPortrait:(NSString *)userId {
+    // 跳转至 详细资料 页面
+    contactInfoVC = [[DDContactInfoViewController alloc] initWithTargetId:self.targetId];
+    [self.navigationController pushViewController:contactInfoVC animated:YES];
 }
 
 
